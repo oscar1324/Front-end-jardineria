@@ -77,14 +77,65 @@
                         </div>
                     </div>
                 </section>
+                <hr>
+                <h4>PRUEBAS MIAS:</h4>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 caja" v-for="(cadaServicio, index) in arrayServicios" :key="index">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color: black;">{{cadaServicio.descripcion_servicio}}</h5>
+                                    <img src="../imagenes/plantar.jpg"  width="300" height="150">
+                                    <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo. Le asesoramos en su elección.</p>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID(cadaServicio.id_servicios)">Calcular presupuesto</button>
+                                </div>
+                            </div>
+                            <Presupuestos idRecibido="IDAenviar" />
+                    </div>
+
+                    <!-- Preguntar -->
+                    <ul v-for="cadaItem, index in foto" :key="index">
+                        <img src="cadaItem.enlace"> / <a href="{{cadaItem.enlace}}">enlace</a>
+                    </ul>
+                    
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
+import axios from 'axios';
+import Presupuestos from '../views/Presupuesto.vue';
 export default {
+    data(){
+        return{
+            arrayServicios: [],
+            foto: [
+                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
+                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
+                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
+                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
+                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
+            ]
+        }
+    },
+    components:{
+        Presupuestos
+    },
     
+    methods:{
+        direccionarconID(id){
+            console.log("Direccionar hacía presupuesto con ID: " + id);
+        }
+    },
+    created(){
+        axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
+        .then( response => {
+            this.arrayServicios = response.data;
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
+    }
 }
 </script>
 
