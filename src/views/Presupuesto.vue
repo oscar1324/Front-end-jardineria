@@ -25,12 +25,19 @@
                 <p>El presupuesto es de ... 80 euros</p>
             </div>
         </div>
+
+        <p>ID de servicio recibido: </p>
    </div>
 </template>
 
 <script>
 export default {
-    
+    data(){
+        return{
+
+        }
+    },
+
 }
 </script>
 <style scoped>
