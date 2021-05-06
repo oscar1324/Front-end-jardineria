@@ -140,7 +140,6 @@
                         <th>ID</th>
                         <th>Fecha</th>
                         <th>Perteneciente a</th>
-                        <th>Modificar</th>
                         <th>Eliminar</th>
                             
                     </tr>
@@ -150,23 +149,13 @@
                         <td>{{cadaPedidos.fecha_pedido}}</td>
                         <td>{{cadaPedidos.username}}</td>
                         <td>
-                            <button type="button" class="btn btn-success">modificar pedido</button>
-                        </td>
-                        <td>
                             <button type="button" class="btn btn-danger" >eliminar</button>
                         </td>
                     
                     </tr>
                 </table>
             </div>
-            <h4>Experimentos modal:</h4>
-            {{descripcionIntroducida}} - {{precioIntroducido}}
-
-
-    
         </div>
-        <!-- modal -->
-
     </div>
 
 </template>
@@ -331,7 +320,7 @@ export default {
         },
 
         // PRESUPUESTOS --------------------------------------------------------------------------
-            eliminarPresupuesto(id){
+        eliminarPresupuesto(id){
             console.log("El id a borrar es: " + id);
             axios.delete('http://localhost:8080/jardinrobledo/v1/presupuestos/' + id)
             this.borradoPresupuesto = true;
@@ -339,7 +328,9 @@ export default {
                 this.borradoPresupuesto = false;
             }, 3500);
             // Para eliminar y que se vea puedo pensar en refrescar pagina o algo
-        }
+        },
+
+        // Pedidos --------------------------------------------------------------------------
     }
 }
 </script>
