@@ -1,14 +1,14 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 formulario">
+            <div class="col-lg-12  col-md-12  col-sm-12 formulario">
                 <h1 class="text-center">Administrador: </h1>
                 <h3>Tareas:</h3>
                 <p><b>1) Sacar modal para modificaciones o Login nada más iniciar</b></p>
                 <p><b>2) Revisar inserción peticiones de usuario/servicios inserción y eliminar</b></p>
                 <p><b>3) Sacar ventana o panel con setTime de eliminación o inserción</b></p>
             </div>
-            <div class="col-lg-10 formulario">
+            <div class="col-lg-10 col-md-10 col-sm-10 formulario">
                                     
                 <h3 class="text-center"><b>Usuarios</b></h3>
                 <table class="container-fluid">
@@ -35,13 +35,13 @@
                 </table>
                 
             </div>
-            <div class="col-lg-2 botones" >
+            <div class="col-lg-2 col-md-2 col-sm-2 botones" >
                 <button type="button" class="btn btn-primary">Añadir usuario</button>
             </div>
             
             
             <!-- SERVICIOS --------------------------------------------------------------------------------->
-            <div class="col-lg-12 formulario">
+            <div class="col-lg-12 col-md-12 col-sm-12 formulario">
                 <h3 class="text-center"><b>Servicios</b></h3>
                 <button type="button" class="btn btn-danger" @click="insertarServicio()">Insertar servicio</button>
                 <table class="container-fluid">
@@ -72,10 +72,10 @@
                 <h4 class="alert-heading" >Borrado correctamente</h4>
             </div>
 
-            <div class="col-lg-12 pegado" >
+            <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
                 <h3 class="text-center"><b>Inserción de Servicio</b></h3>
             </div>
-            <div class="col-lg-10 formulario">
+            <div class="col-lg-10 col-md-10 col-sm-10 formulario">
                 <label>Descripción servicio:</label>
                 <input type="text" class="form-control col-lg-7" placeholder="descripción del nuevo servicio..." v-model="descripcionIntroducida">
                 <label>Precio:</label>
@@ -83,7 +83,7 @@
                 <button type="button" class="btn btn-success" @click="nuevoServicio()">Agregar nuevo servicio</button>
             </div>
             
-            <div class="col-lg-2 formulario margen">
+            <div class="col-lg-2 col-md-2 col-sm-2 formulario margen">
                
                 <img src="../imagenes/desbro.jpg"  width="150" height="150">
                  <p>{{username}}</p>
@@ -100,7 +100,7 @@
             </div>
 
             <!-- Presupuestos  ----------------------------------------------------------------------->
-            <div class="col-lg-12 margenP">
+            <div class="col-lg-12 col-md-12 col-sm-12 margenP">
                 <h3 class="text-center"><b>Presupuestos</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
@@ -132,7 +132,7 @@
             </div>
 
             <!-- Pedidos -------------------------------------------------------------------------------------->
-            <div class="col-lg-12 formulario">
+            <div class="col-lg-12 col-md-12 col-sm-12 formulario">
                 <h3 class="text-center"><b>Pedidos</b></h3>
                 <button type="button" class="btn btn-danger">Insertar Pedido</button>
                 <table class="container-fluid">
@@ -286,9 +286,6 @@ export default {
         },
 
         // PETICIONES SERVICIO
-         //   aviso: false,
-           // modificado: false,
-            // borrado:false,
         nuevoServicio(){
 
             console.log("datos: " + this.descripcionIntroducida + " / "  +this.precioIntroducido);

@@ -1,14 +1,14 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12  col-sm-12">
                 <section id="Servicios">
                     <div class="titulo">
                         <h2>Nuestra empresa ofrece estos servicios:</h2>
                     </div>
                 
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: black;">Sistema riego</h5>
@@ -21,7 +21,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: black;">Podas</h5>
@@ -32,18 +32,18 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: black;">Cesped artificial</h5>
                                     <img src="../imagenes/cespedPrimerPlano.jpg"  width="300" height="150">
-                                    <p class="card-text" style="color: black;">Reduce costes de mantenimiento instalando césped artificial de calidad al mejor precio.</p>
+                                    <p class="card-text" style="color: black;">Reduce costes de mantenimiento instalando césped artificial de calidad al mejor precio y trato excelente.</p>
                                     <button type="button" class="btn btn-primary">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-md-4 caja">
+                        <div class="col-lg-4 col-md-4 col-sm-4 caja">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: black;">mantenimiento de jardines</h5>
@@ -54,7 +54,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 caja">
+                        <div class="col-lg-4 col-md-4  col-sm-4caja">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: black;">Desbrozar</h5>
@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 caja">
+                        <div class="col-lg-4 col-md-4 col-sm-4 caja">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h5 class="card-title" style="color: black;">Plantaciones</h5>
