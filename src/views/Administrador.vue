@@ -48,6 +48,10 @@
                 <input type="text" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
                 <button type="button" class="btn btn-success" @click="insertarUsuario()">Agregar nuevo usuario</button>
             </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 formulario margen">
+                <img src="../imagenes/usuario1.jpg"  width="150" height="150">
+                 <p>{{username}}</p>
+            </div>
             
             
             <!-- SERVICIOS --------------------------------------------------------------------------------->
@@ -140,30 +144,6 @@
                 <h4 class="alert-heading" >Borrado correctamente</h4>
             </div>
 
-            <!-- Pedidos -------------------------------------------------------------------------------------->
-            <div class="col-lg-12 col-md-12 col-sm-12 formulario">
-                <h3 class="text-center"><b>Pedidos</b></h3>
-                <button type="button" class="btn btn-danger">Insertar Pedido</button>
-                <table class="container-fluid">
-                    <tr class="estiloTable1">
-                        <th>ID</th>
-                        <th>Fecha</th>
-                        <th>Perteneciente a</th>
-                        <th>Eliminar</th>
-                            
-                    </tr>
-
-                    <tr v-for="(cadaPedidos, index) in arrayPedidos" :key="index" class="estiloTable2">
-                        <td>{{cadaPedidos.id_pedidos}}</td>
-                        <td>{{cadaPedidos.fecha_pedido}}</td>
-                        <td>{{cadaPedidos.username}}</td>
-                        <td>
-                            <button type="button" class="btn btn-danger" >eliminar</button>
-                        </td>
-                    
-                    </tr>
-                </table>
-            </div>
         </div>
     </div>
 
@@ -176,7 +156,7 @@ export default {
     data(){
         return{
             isOpen: false,
-            // Variables usuario -----------------------------------------------------------------------------
+            // Variables usuario 
             username: '',
             password: '',
             array: [],
@@ -276,7 +256,7 @@ export default {
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
         },
-        
+
         //revisar
         modificarServicio(){
             console.log("datos: " + this.descripcionIntroducida + " / "  +this.precioIntroducido);
@@ -311,7 +291,6 @@ export default {
             // Para eliminar y que se vea puedo pensar en refrescar pagina o algo
         },
 
-        // Pedidos --------------------------------------------------------------------------
     }
 }
 </script>
