@@ -38,6 +38,16 @@
             <div class="col-lg-2 col-md-2 col-sm-2 botones" >
                 <button type="button" class="btn btn-primary">Añadir usuario</button>
             </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
+                <h3 class="text-center"><b>Inserción de Usuario:</b></h3>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10 formulario">
+                <label>Username:</label>
+                <input type="text" class="form-control col-lg-7" placeholder="Usuario..." v-model="user.username">
+                <label>Contraseña:</label>
+                <input type="text" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
+                <button type="button" class="btn btn-success" @click="insertarUsuario()">Agregar nuevo usuario</button>
+            </div>
             
             
             <!-- SERVICIOS --------------------------------------------------------------------------------->
@@ -77,12 +87,11 @@
             </div>
             <div class="col-lg-10 col-md-10 col-sm-10 formulario">
                 <label>Descripción servicio:</label>
-                <input type="text" class="form-control col-lg-7" placeholder="descripción del nuevo servicio..." v-model="descripcionIntroducida">
+                <input type="text" class="form-control col-lg-7" placeholder="descripción del nuevo servicio..." v-model="servicio.descripcion_servicio">
                 <label>Precio:</label>
-                <input type="text" class="form-control col-lg-7" placeholder="precio metro" v-model="precioIntroducido">
+                <input type="text" class="form-control col-lg-7" placeholder="precio metro" v-model="servicio.precio_metro">
                 <button type="button" class="btn btn-success" @click="nuevoServicio()">Agregar nuevo servicio</button>
             </div>
-            
             <div class="col-lg-2 col-md-2 col-sm-2 formulario margen">
                
                 <img src="../imagenes/desbro.jpg"  width="150" height="150">
@@ -172,32 +181,17 @@ export default {
             password: '',
             array: [],
 
-            /*
-            Revisar, fallo username
-                users: {
-                username,
-                password,
-            }, */
-            usuarioModifciado: {
-                username: 'Ingelmo_Avenida',
-                password: 'qweasdsf123',
+            user: {
+                username: '',
+                password: '',
             },
 
-            // Variables Servicio Introducidas ------------------------------------------------------------------
-            descripcionIntroducida: String ,
-            precioIntroducido: Number,
-
-            // Almacenadas para envio
-            /*           
-                descripcion_servicio: descripcionIntroducida,
-                precio_metro: precioIntroducido,
-             */
             servicio: {
-                descripcion_servicio: this.descripcionIntroducida,
-                precio_metro: this.precioIntroducido,
+                descripcion_servicio :'', 
+                precio_metro: '',
             },
 
-            // Variables alertas a mostrar
+            // Variables avisos a mostrar
             aviso: false,
             modificado: false,
             borrado:false,
@@ -210,46 +204,40 @@ export default {
     },
 
     created(){
-            // usuarios
-            axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
-            .then( response => {
-                this.array = response.data;
-                this.array.sort(((a,b) => b.nombre - a.nombre));
-            })
-            .catch(response => alert("Error petición obtener: " + response.status));
 
-            // servicios
-            axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
-            .then( response => {
-                this.arrayServicios = response.data;
-                this.arrayServicios.sort(((a,b) => b.precio_metro - a.precio_metro));
-            })
-            .catch(response => alert("Error petición obtener: " + response.status));
+        axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
+        .then( response => {
+            this.array = response.data;
+            this.array.sort(((a,b) => b.nombre - a.nombre));
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
 
-            // presupuestos
-            axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
-            .then( response => {
-                this.arrayPresupuestos = response.data;
-            })
-            .catch(response => alert("Error petición obtener: " + response.status));
+        axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
+        .then( response => {
+            this.arrayServicios = response.data;
+            this.arrayServicios.sort(((a,b) => b.precio_metro - a.precio_metro));
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
 
-            // pedidos
-            axios.get('http://localhost:8080/jardinrobledo/v1/pedidos')
-            .then( response => {
-                this.arrayPedidos = response.data;
-            })
-            .catch(response => alert("Error petición obtener: " + response.status));
-        
+        axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
+        .then( response => {
+            this.arrayPresupuestos = response.data;
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
 
+        axios.get('http://localhost:8080/jardinrobledo/v1/pedidos')
+        .then( response => {
+            this.arrayPedidos = response.data;
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
     },
 
     methods:{
 
-
         // PETICIONES USUARIO
-
         insertarUsuario(){
-            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.users)
+            console.log("Objeto usuario: " , this.user)
+            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
             .then( response =>{
                 console.log(response);
             })
@@ -277,25 +265,18 @@ export default {
         // PETICIONES SERVICIO
         nuevoServicio(){
 
-            console.log("datos: " + this.descripcionIntroducida + " / "  +this.precioIntroducido);
-            let guardaD = this.descripcionIntroducida;
-            let guardaPrecio = this.precioIntroducido
-            const servicio = {guardaD,guardaPrecio}
-
-
-            console.log("Datos a guardaR: " + servicio.guardaD + " / " + servicio.guardaPrecio);
             this.aviso = true;
             setTimeout(()=>{
                 this.aviso = false;
             }, 3500);
-            axios.post('http://localhost:8080/jardinrobledo/v1/servicios/', servicio)
+            console.log("Servicio: " , this.servicio);
+            axios.post('http://localhost:8080/jardinrobledo/v1/servicios/', this.servicio)
             .then( response =>{
                 console.log(response);
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
-            console.log("Servicio: " + this.servicio);
-
         },
+        
         //revisar
         modificarServicio(){
             console.log("datos: " + this.descripcionIntroducida + " / "  +this.precioIntroducido);
