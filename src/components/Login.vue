@@ -1,18 +1,22 @@
 <template >
 <!--   Meter v-if para que se muestre -->
-<div class="wrapper fadeInDown" style="background-color: green">
-  <div id="formContent">
-    <div class="fadeIn first">
-      <img src="../imagenes/usuario2.jpg" id="icon" alt="User Icon" width="100" height="150"/>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 wrapper fadeInDown" style="background-color: green">
+      <div id="formContent">
+        <div class="fadeIn first">
+          <img src="../imagenes/usuario2.jpg" id="icon" alt="User Icon" width="100" height="150"/>
+        </div>
+
+        <!-- Login Form -->
+        <form v-on:submit.prevent="login">
+          <input type="text" id="username" class="fadeIn second" name="username" placeholder="Usuario" v-model="username">
+          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" v-model="password">
+          <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+      </div>
     </div>
-
-    <!-- Login Form -->
-    <form v-on:submit.prevent="login">
-      <input type="text" id="username" class="fadeIn second" name="username" placeholder="Usuario" v-model="username">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" v-model="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
   </div>
 </div>
 </template>
