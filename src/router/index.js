@@ -25,6 +25,10 @@ const routes = [
     component: Presupuesto
   },
   {
+    path:'/Presupuesto/:id',
+    component: Presupuesto
+  },
+  {
     path:'/Contacto',
     component:Contacto
   },
