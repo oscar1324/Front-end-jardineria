@@ -15,20 +15,22 @@
                     <tr class="estiloTable1">
                         <th>Username</th>
                         <th>Password</th>
+                        <th>Disabled</th>
                         <th>Modificar</th>
                         <th>Eliminar</th>
                             
                     </tr>
 
                     <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                        <td>{{cadaUsuario.username}}</td>
-                        <td>{{cadaUsuario.password}}</td>
+                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.username}}</p></td>
+                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.password}}</p></td>
+                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.disabled}}</p></td>
 
                         <td>
-                            <button type="button" class="btn btn-success" @click="modificarUsuario(cadaUsuario.username)">modificar usuarios</button>
+                            <button type="button" class="btn btn-success" @click="modificarUsuario(cadaUsuario.username)" v-if="cadaUsuario.disabled === 1">modificar usuarios</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-danger" @click="eliminarUsuario(cadaUsuario.username)">eliminar</button>
+                            <button type="button" class="btn btn-danger" @click="eliminarUsuario(cadaUsuario.username, cadaUsuario.password, cadaUsuario.disabled)" v-if="cadaUsuario.disabled === 1">eliminar</button>
                         </td>
                     
                     </tr>
@@ -52,19 +54,20 @@
                 <img src="../imagenes/usuario1.jpg"  width="150" height="150">
                  <p>{{username}}</p>
             </div>
-            
-            
+            <div class="alert alert-success" role="alert" v-if="inserccionUsuario === true">
+                <h4 class="alert-heading" >Insertado correctamente</h4>
+            </div>
+
+
             <!-- SERVICIOS --------------------------------------------------------------------------------->
             <div class="col-lg-12 col-md-12 col-sm-12 formulario">
                 <h3 class="text-center"><b>Servicios</b></h3>
-                <button type="button" class="btn btn-danger" @click="insertarServicio()">Insertar servicio</button>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
                         <th>ID</th>
                         <th>Descripción del servicio</th>
                         <th>Precio m/€</th>
                         <th>Modificar</th>
-                        <th>Eliminar</th>
                             
                     </tr>
 
@@ -75,16 +78,10 @@
                         <td>
                             <button type="button" class="btn btn-success" @click="modificarServicio(cadaServicio.id_servicios)">modificar servicio</button>
                         </td>
-                        <td>
-                            <button type="button" class="btn btn-danger" @click="eliminarServicio(cadaServicio.id_servicios)">eliminar</button>
-                        </td>
-                    
                     </tr>
                 </table>
             </div>
-            <div class="alert alert-danger" role="alert" v-if="borrado === true">
-                <h4 class="alert-heading" >Borrado correctamente</h4>
-            </div>
+
 
             <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
                 <h3 class="text-center"><b>Inserción de Servicio</b></h3>
@@ -121,6 +118,7 @@
                         <th>Cantidad terreno</th>
                         <th>Fecha</th>
                         <th>Perteneciente a</th>
+                        <th>Disabled </th>
                         <th>Comentario</th>
                         <th>Eliminar</th>
                             
@@ -131,9 +129,13 @@
                         <td>{{cadaPresupuesto.cantidad_terreno}}</td>
                         <td>{{cadaPresupuesto.fecha_presupuesto}}</td>
                         <td>{{cadaPresupuesto.username}}</td>
+                        <td>{{cadaPresupuesto.disabled}}</td>
                         <td>{{cadaPresupuesto.comentario}}</td>
                         <td>
-                            <button type="button" class="btn btn-danger" @click="eliminarPresupuesto()">eliminar</button>
+
+                            <button type="button" class="btn btn-danger" @click="eliminarPresupuesto(cadaPresupuesto.id_presupuestos,cadaPresupuesto.cantidad_terreno,cadaPresupuesto.fecha_presupuesto,cadaPresupuesto.comentario,cadaPresupuesto.username)">
+                                eliminar
+                            </button>
                         </td>
                     
                     </tr>
@@ -164,7 +166,9 @@ export default {
             user: {
                 username: '',
                 password: '',
+                disabled: 1
             },
+            inserccionUsuario: false,
 
             servicio: {
                 descripcion_servicio :'', 
@@ -202,12 +206,7 @@ export default {
         axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
         .then( response => {
             this.arrayPresupuestos = response.data;
-        })
-        .catch(response => alert("Error petición obtener: " + response.status));
-
-        axios.get('http://localhost:8080/jardinrobledo/v1/pedidos')
-        .then( response => {
-            this.arrayPedidos = response.data;
+            console.log(this.arrayPresupuestos);
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
@@ -222,23 +221,33 @@ export default {
                 console.log(response);
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
-            console.log("Usuario: " + this.users);
 
+            this.inserccionUsuario =  true;
+            setTimeout(()=>{
+                this.inserccionUsuario =  false;
+            }, 3500);
         },
-        // formulario modal
+
+        
         modificarUsuario(){
-            axios.put('http://localhost:8080/jardinrobledo/v1/usuarios/', this.users)
+            axios.put('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
             .then( response =>{
                 console.log(response);
             })
             .catch(response => console.log("Error petición modificar: " + response.status));
-            console.log();
+         
         },
-        eliminarUsuario(username){
-            console.log("El id a borrar es: " + username);
-            axios.delete('http://localhost:8080/jardinrobledo/v1/usuarios/' + username)
-            .catch(response => console.log("No puedes eliminarlo, tiene presupuestos activos"));
-            console.log();
+        eliminarUsuario(username, password, disabled){
+            console.log("El usuario a borrar es: " + username +  "/" + password +  "/" + disabled);
+            let usuario = {
+                username,
+                password,
+                disabled: 0
+            
+            }
+            console.log("objeto usuario: " , usuario);
+            axios.put('http://localhost:8080/jardinrobledo/v1/usuarios/' ,usuario  )
+            .catch(response => console.log("Error petición: " + response.status));
 
         },
 
@@ -270,25 +279,25 @@ export default {
             })
             .catch(response => console.log("Error petición modificar: " + response.status));
         },
-        eliminarServicio(id_servicios){
-            console.log("El id a borrar es: " + id_servicios);
-            axios.delete('http://localhost:8080/jardinrobledo/v1/servicios/' + id_servicios)
-            this.borrado = true;
-            setTimeout(()=>{
-                this.borrado = false;
-            }, 3500);
-            // Para eliminar y que se vea puedo pensar en refrescar pagina o algo
-        },
 
         // PRESUPUESTOS --------------------------------------------------------------------------
-        eliminarPresupuesto(id){
-            console.log("El id a borrar es: " + id);
-            axios.delete('http://localhost:8080/jardinrobledo/v1/presupuestos/' + id)
-            this.borradoPresupuesto = true;
+        eliminarPresupuesto(id_presupuestos, cantidad_terreno, fecha_presupuesto, comentario, username){
+            let presupuesto = {
+                id_presupuestos,
+                cantidad_terreno,
+                fecha_presupuesto,
+                comentario,
+                username,
+                disabled:0
+            }
+            console.log("objeto presupuesto: " , presupuesto);
+            axios.put('http://localhost:8080/jardinrobledo/v1/presupuestos/' , presupuesto  )
+            .catch(response => console.log("Error petición: " + response.status));
+                this.borradoPresupuesto = true;
             setTimeout(()=>{
                 this.borradoPresupuesto = false;
             }, 3500);
-            // Para eliminar y que se vea puedo pensar en refrescar pagina o algo
+
         },
 
     }
