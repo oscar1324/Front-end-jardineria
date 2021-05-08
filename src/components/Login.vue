@@ -10,9 +10,12 @@
 
         <!-- Login Form -->
         <form v-on:submit.prevent="login">
-          <input type="text" id="username" class="fadeIn second" name="username" placeholder="Usuario" v-model="username">
-          <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" v-model="password">
+          <label>Username:</label>
+          <input type="text" class="form-control col-lg-7" placeholder="Usuario..." v-model="user.username">
+          <label>Contraseña:</label>
+          <input type="text" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
           <input type="submit" class="fadeIn fourth" value="Log In">
+         
         </form>
 
       </div>
@@ -27,25 +30,23 @@ import axios from 'axios';
 export default {
     
 
-    name: 'Login',
-    components: {
+  name: 'Login',
+  components: {
 
-    },
-    data(){
-        return{
-            username: '',
-            password:'',
-            error: false,
-            error_mensaje: '',
-            mostrar:false,
-
-            newUser: {
-                username: 'AAADoloresmez_343',
-                password: '123f',
-           
-            }
-
-        }
+  },
+  data(){
+    return{
+      username: '',
+      password:'',
+      error: false,
+      error_mensaje: '',
+      mostrar:false,
+      user: {
+        username: '',
+        password: '',
+        disabled: 1
+      },
+    }
     },
 
     created(){
@@ -53,15 +54,12 @@ export default {
     },
     methods:{
         login(){
-            console.log("user: " + this.username + " / " + this.password);
-            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios',  this.newUser)
+            console.log("user: " + this.user.username + " / " + this.user.password);
+            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
             .then( response =>{
-                if(response.response.status == "ok"){
-                    console.log("Todo correcto ");
-                }
+                console.log(response);
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
-            this.$router.replace('/principal')
         }
     },
     props: ['nombreUsuario']
