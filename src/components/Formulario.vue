@@ -15,7 +15,9 @@
             </div>
         </div>
     </div> -->
- <button id="show-modal" @click="showModal = true">Show Modal</button>
+    <p>kjkkk</p>
+    <button>cerrar</button>
+
     <transition name="modal">
     <div class="modal-mask">
       <div class="modal-wrapper">
@@ -40,7 +42,7 @@
           <div class="modal-footer">
             <slot name="footer">
               <p>Footer</p><br>
-              <button type="button" class="btn btn-success" @close="showModal = false">Cerrar</button>
+              <button type="button" class="btn btn-success" @click="showModal = false">Cerrar</button>
             </slot>
           </div>
         </div>
@@ -65,12 +67,12 @@
 export default {
     data(){
         
-        return{
-            showModal: false,
-             ventana: false,
-            username: '',
-            password: '',
-        }
+      return{
+        showModal: false,
+        ventana: false,
+        username: '',
+        password: '',
+      }
     }
 }
 </script>

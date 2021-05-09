@@ -9,11 +9,18 @@
         </div>
 
         <!-- Login Form -->
-        <form v-on:submit.prevent="login">
-          <label>Username:</label>
-          <input type="text" class="form-control col-lg-7" placeholder="Usuario..." v-model="user.username">
-          <label>Contraseña:</label>
-          <input type="text" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
+        <form v-on:submit.prevent="login" method="post" id="formularioLogin" role="form">
+          <div class="form-group has-success">
+            <label for="username">Username:</label>
+            <input type="text" id="username" class="form-control col-lg-7" placeholder="Usuario..." v-model="user.username" >
+            <!-- <b style="color: red" v-if="!user.username">Nombre es obligatorio *</b> -->
+            
+          </div>
+          <div class="form-group has-success">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
+            <!-- <b style="color: red" v-if="!user.password">Constraseña obligatoria*</b> -->
+          </div>
           <input type="submit" class="fadeIn fourth" value="Log In">
          
         </form>
@@ -27,6 +34,7 @@
 
 <script>
 import axios from 'axios';
+import {required, minLength, maxLength} from 'vuelidate/lib/validators';
 export default {
     
 
@@ -38,9 +46,9 @@ export default {
     return{
       username: '',
       password:'',
-      error: false,
-      error_mensaje: '',
       mostrar:false,
+
+
       user: {
         username: '',
         password: '',
@@ -60,9 +68,22 @@ export default {
                 console.log(response);
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
-        }
+        },
     },
-    props: ['nombreUsuario']
+    validations:{
+      user:{
+        username:{
+          required,
+          minlength: minLength(4),
+          maxlength: maxLength(17)          
+        },
+        password: {
+          required,
+          minlength: minLength(4),
+        
+        }
+      }
+    }
 }
 </script>
 
