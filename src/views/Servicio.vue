@@ -14,9 +14,7 @@
                                     <h5 class="card-title" style="color: black;">Sistema riego</h5>
                                     <img src="../imagenes/riego2.jpg"  width="300" height="150">
                                     <p class="card-text" style="color: black;">El riego es fundamental, por ello instalamos sistemas de riego eficientes además de repararlos. </p>
-                                    <button type="button" class="btn btn-primary">Calcular presupuesto</button>
-                                    <!-- Se le pasa tipo de servicio y se redireciona hacia presupueso, recibiendo del padre ese sericio -->
-                                            
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID1()">Calcular presupuesto</button>                                            
                                 </div>
                             </div>
                         </div>
@@ -27,7 +25,7 @@
                                     <h5 class="card-title" style="color: black;">Podas</h5>
                                     <img src="../imagenes/podar.jpg"  width="300" height="150">
                                     <p class="card-text" style="color: black;">Somos especialistas en trabajos de poda de todo tipo, tanto en altura como para arbustos y rosales.</p>
-                                    <button type="button" class="btn btn-primary">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID2()">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +36,7 @@
                                     <h5 class="card-title" style="color: black;">Cesped artificial</h5>
                                     <img src="../imagenes/cespedPrimerPlano.jpg"  width="300" height="150">
                                     <p class="card-text" style="color: black;">Reduce costes de mantenimiento instalando césped artificial de calidad al mejor precio y trato excelente.</p>
-                                    <button type="button" class="btn btn-primary">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID3()">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -49,7 +47,7 @@
                                     <h5 class="card-title" style="color: black;">mantenimiento de jardines</h5>
                                     <img src="../imagenes/mantenimiento.jpg"  width="300" height="150">
                                     <p class="card-text" style="color: black;">Ahorra tiempo y dinero en herramientas y maquinaria contratando un servicio profesional de mantenimiento.</p>
-                                    <button type="button" class="btn btn-primary">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID4()">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +58,7 @@
                                     <h5 class="card-title" style="color: black;">Desbrozar</h5>
                                     <img src="../imagenes/desbro.jpg"  width="300" height="150">
                                     <p class="card-text" style="color: black;">Nos ocupamos de limpiar tu parcela, ya sea por la obligatoriedad municipal o para tu propio disfrute.</p>
-                                    <button type="button" class="btn btn-primary">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID5()">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -71,27 +69,13 @@
                                     <h5 class="card-title" style="color: black;">Plantaciones</h5>
                                     <img src="../imagenes/plantar.jpg"  width="300" height="150">
                                     <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo. Le asesoramos en su elección.</p>
-                                    <button type="button" class="btn btn-primary">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID6()">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <hr>
-                <h4>PRUEBAS MIAS:</h4>
-
-
-                    <div class="col-lg-4 col-md-4 col-sm-4 caja" v-for="(cadaServicio, index) in arrayServicios" :key="index">
-                            <div class="card text-center">
-                                <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">{{cadaServicio.descripcion_servicio}}</h5>
-                                    <img src="../imagenes/plantar.jpg"  width="300" height="150">
-                                    <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo. Le asesoramos en su elección.</p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID(cadaServicio.id_servicios)">Calcular presupuesto</button>
-                                </div>
-                            </div>
-                            <Presupuestos idRecibido="IDAenviar" />
-                    </div>
+                
 
                     <!-- Preguntar -->
                     <ul v-for="cadaItem, index in foto" :key="index">
@@ -110,6 +94,7 @@ import Presupuestos from '../views/Presupuesto.vue';
 export default {
     data(){
         return{
+            mostrar: false,
             arrayServicios: [],
             foto: [
                 {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
@@ -125,8 +110,39 @@ export default {
     },
     
     methods:{
-        direccionarconID(id){
-            console.log("Direccionar hacía presupuesto con ID: " + id);
+        direccionarconID1(){
+            let servicioID = 1
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
+            this.$router.replace(`/Presupuesto/${servicioID}`)
+        },
+        direccionarconID2(){
+            let servicioID = 2
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
+            this.$router.replace(`/Presupuesto/${servicioID}`)
+        },
+
+        direccionarconID3(){
+            let servicioID = 3
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
+            this.$router.replace(`/Presupuesto/${servicioID}`)
+        },
+
+        direccionarconID4(){
+            let servicioID = 4
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
+            this.$router.replace(`/Presupuesto/${servicioID}`)
+        },
+
+        direccionarconID5(){
+            let servicioID = 5
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
+            this.$router.replace(`/Presupuesto/${servicioID}`)
+        },
+
+        direccionarconID6(){
+            let servicioID = 6
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
+            this.$router.replace(`/Presupuesto/${servicioID}`)
         }
     },
     created(){
