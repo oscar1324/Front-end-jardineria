@@ -18,7 +18,7 @@
           </div>
           <div class="form-group has-success">
             <label for="password">Contraseña:</label>
-            <input type="password" id="password" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
+            <input type="text" id="password" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
             <!-- <b style="color: red" v-if="!user.password">Constraseña obligatoria*</b> -->
           </div>
           <input type="submit" class="fadeIn fourth" value="Log In">
