@@ -47,15 +47,22 @@
         </div>
         <hr>
         <h3 class="text-center">Siguenos en  </h3>
-        <div class="col-md-12">
+        <div class="col-lg-12">
             <iframe class="iframe1"  src="https://www.instagram.com/p/CMKC934FmLN/embed/" width="50%" height="300px" frameborder="0"
             scrolling="no" allowtransparency="true"></iframe>
 
-            
             <a class="twitter-timeline ifram2" href="https://twitter.com/JardinesRobledo?ref_src=twsrc%5Etfw" width="50%" height="300px"></a>
-            <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-            
+            <div  class="descripcion">
+                <p>
+                    Jardines de Kalmia es su empresa de la sierra de Francia.<br> 
+                    Entre los servicios que ofrecemos está el mantenimiento <br> 
+                    del jardín, diseño y ejecución de jardines nuevos, trabajos de<br> 
+                    poda e instalaciones de césped o riegos.
+                </p>
+            </div>
         </div>
+        
+        
     </div>
 
 
@@ -63,7 +70,11 @@
 
 <script>
 export default {
-    
+    data(){
+        return{
+
+        }
+    }
 }
 </script>
 
@@ -85,4 +96,9 @@ export default {
 .a{
     color: black;
 }
+.descripcion{
+    float: right;
+    font-size: 16px;
+}
+
 </style>
