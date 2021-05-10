@@ -11,18 +11,20 @@
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Usuarios
+                            Usuarios
                         </a>
+                        <!-- Preguntar -->
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Listar usuarios</a>
-                            <a class="dropdown-item" href="#">Insertar usuarios </a>
-                            <a class="dropdown-item" href="#">Modificar usuarios</a>
-                            <a class="dropdown-item" href="#">Eliminar usuarios  </a>
+                            <a class="dropdown-item" href="/usuarios">Listar usuarios</a>
+                            <a class="dropdown-item" href="/insertarUsuario">Insertar usuarios </a>
+                            <a class="dropdown-item" href="/modificarUsuario">Modificar usuarios</a>
+                            <a class="dropdown-item" href="/eliminacionUsuario">Eliminar usuarios  </a>
                         </div>
+                        
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Servicios
+                            Servicios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Listar servicios</a>
@@ -31,13 +33,11 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Presupuestos
+                            Presupuestos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Listar presupuestos</a>
+                            <a class="dropdown-item" href="#">Eliminar presupuestos</a>
                         </div>
                     </li>
                     </ul>
@@ -45,43 +45,8 @@
             </nav>
             <div class="col-lg-12  col-md-12  col-sm-12 formulario">
                 <h1 class="text-center">Administrador: </h1>
-                <h3>Tareas:</h3>
-                <p><b>1) Sacar modal para modificaciones o Login nada más iniciar</b></p>
-                <p><b>2) Revisar inserción peticiones de usuario/servicios inserción y eliminar</b></p>
-                <p><b>3) Sacar ventana o panel con setTime de eliminación o inserción</b></p>
             </div>
-            <div class="col-lg-10 col-md-10 col-sm-10 formulario">
-                                    
-                <h3 class="text-center"><b>Usuarios</b></h3>
-                <table class="container-fluid">
-                    <tr class="estiloTable1">
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Disabled</th>
-                        <th>Modificar</th>
-                        <th>Eliminar</th>
-                            
-                    </tr>
-
-                    <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.username}}</p></td>
-                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.password}}</p></td>
-                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.disabled}}</p></td>
-
-                        <td>
-                            <button type="button" class="btn btn-success" @click="modificarUsuario(cadaUsuario.username)" v-if="cadaUsuario.disabled === 1">modificar usuarios</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger" @click="eliminarUsuario(cadaUsuario.username, cadaUsuario.password, cadaUsuario.disabled)" v-if="cadaUsuario.disabled === 1">eliminar</button>
-                        </td>
-                    
-                    </tr>
-                </table>
-                
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 botones" >
-                <button type="button" class="btn btn-primary">Añadir usuario</button>
-            </div>
+        
             <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
                 <h3 class="text-center"><b>Inserción de Usuario:</b></h3>
             </div>
@@ -231,12 +196,6 @@ export default {
 
     created(){
 
-        axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
-        .then( response => {
-            this.array = response.data;
-            this.array.sort(((a,b) => b.nombre - a.nombre));
-        })
-        .catch(response => alert("Error petición obtener: " + response.status));
 
         axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
         .then( response => {
