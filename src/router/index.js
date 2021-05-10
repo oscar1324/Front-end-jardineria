@@ -44,10 +44,6 @@ const routes = [
     component: Administrador
   },
   {
-    path: '/usuarios',
-    component: Usuarios
-  },
-  {
     path: '/login',
     component: Login
   },
@@ -60,8 +56,11 @@ const routes = [
     component: Pruebas
   },
   // Usuarios
-  
-    {
+  {
+    path: '/usuarios',
+    component: Usuarios
+  },
+  {
     path: '/insertarUsuario',
     component: InsertarUsuario
   },
