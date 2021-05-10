@@ -1,8 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
+            <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
                 <h3 class="text-center"><b>Inserción de Usuario:</b></h3>
                 </div>
                 <div class="col-lg-10 col-md-10 col-sm-10 formulario">
@@ -20,7 +19,6 @@
                     <h4 class="alert-heading" >Insertado correctamente</h4>
                 </div>
             </div>
-        </div>
     </div>
 </template>
 
@@ -29,6 +27,7 @@ import axios from 'axios';
 export default {
     data(){
         return{
+            inserccionUsuario: false,
             username: '',
             password: '',
             array: [],
@@ -60,5 +59,25 @@ export default {
 <style scoped>
 .container{
     color: black;
+}
+.formulario{
+    margin-bottom: 15px;
+    background-color:rgb(245, 194, 127);
+    padding-bottom: 10px;
+}
+
+.margenP{
+    background-color:rgb(245, 194, 127);
+    margin-bottom: 15px;
+   
+}
+.pegado{
+    background-color:rgb(245, 194, 127);
+}
+.botones{
+    padding-top: 100px;
+    margin-bottom: 15px;
+    background-color:rgb(245, 194, 127);
+   
 }
 </style>

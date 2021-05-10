@@ -1,24 +1,25 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-           
-                                    
+            <div class="col-lg-12 col-md-12 col-sm-12">              
                 <h3 class="text-center"><b>Usuarios</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
                         <th>Username</th>
                         <th>Password</th>
-                        <th>Disabled</th>           
+                        <th>Disabled</th>
+                        <th>Foto</th>           
                     </tr>
 
                     <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.username}}</p></td>
-                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.password}}</p></td>
-                        <td><p v-if="cadaUsuario.disabled === 1">{{cadaUsuario.disabled}}</p></td>
+                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.username}}</p></td>
+                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
+                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.disabled}}</p></td>
+                        <td v-if="cadaUsuario.disabled === 1">
+                            <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
+                        </td>
                     </tr>
                 </table>
-                
             </div>
         </div>
     </div>
