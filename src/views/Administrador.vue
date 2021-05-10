@@ -37,7 +37,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/listPresupuestos">Listar presupuestos</a>
-                            <a class="dropdown-item" href="#">Eliminar presupuestos</a>
+                            <a class="dropdown-item" href="/eliminarPresupuesto">Eliminar presupuestos</a>
                         </div>
                     </li>
                     </ul>

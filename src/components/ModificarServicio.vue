@@ -70,6 +70,15 @@ export default {
         .catch(response => alert("Error petición obtener: " + response.status));
     },
 
+    updated(){
+        axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
+        .then( response => {
+            this.arrayServicios = response.data;
+            this.arrayServicios.sort(((a,b) => b.precio_metro - a.precio_metro));
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
+    },
+
     methods:{
         modificarServicio(){
             axios.put('http://localhost:8080/jardinrobledo/v1/servicios/', this.servicio)

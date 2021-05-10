@@ -72,6 +72,15 @@ export default {
         .catch(response => alert("Error petición obtener: " + response.status));
     },
 
+    updated(){
+        axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
+        .then( response => {
+            this.array = response.data;
+            this.array.sort(((a,b) => b.nombre - a.nombre));
+        })
+        .catch(response => alert("Error petición obtener: " + response.status));
+    },
+
     methods:{
         modificarUsuario(){
             console.log("datos a cambiar: " + this.user.username + " / " + this.user.password);

@@ -11,7 +11,7 @@
                         <th>Perteneciente a</th>
                         <th>Disabled </th>
                         <th>Comentario</th>
-                        <th>Eliminar</th>
+                        <th>Foto</th>
                             
                     </tr>
 
@@ -23,10 +23,7 @@
                         <td>{{cadaPresupuesto.disabled}}</td>
                         <td>{{cadaPresupuesto.comentario}}</td>
                         <td>
-
-                            <button type="button" class="btn btn-danger" @click="eliminarPresupuesto(cadaPresupuesto.id_presupuestos,cadaPresupuesto.cantidad_terreno,cadaPresupuesto.fecha_presupuesto,cadaPresupuesto.comentario,cadaPresupuesto.username)">
-                                eliminar
-                            </button>
+                            <img src="../imagenes/presu.jpg" width="40">
                         </td>
                     
                     </tr>
