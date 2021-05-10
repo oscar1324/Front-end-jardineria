@@ -3,16 +3,16 @@
         <div class="row">
             <div class="col-lg-12  col-sm-12">
                 <section id="Servicios">
-                    <div class="titulo">
-                        <h2>Nuestra empresa ofrece estos servicios:</h2>
+                    <div class="titulo text-center">
+                        <h1 style="color: white">SERVICIOS DE JARDINERIA ROBLEDO</h1>
                     </div>
                 
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">Sistema riego</h5>
-                                    <img src="../imagenes/riego2.jpg"  width="300" height="150">
+                                    <h4 class="card-title" style="color: black;">Sistema riego</h4>
+                                    <img src="../imagenes/riego2.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">El riego es fundamental, por ello instalamos sistemas de riego eficientes además de repararlos. </p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID1()">Calcular presupuesto</button>                                            
                                 </div>
@@ -22,8 +22,8 @@
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">Podas</h5>
-                                    <img src="../imagenes/podar.jpg"  width="300" height="150">
+                                    <h4 class="card-title" style="color: black;">Podas</h4>
+                                    <img src="../imagenes/podar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Somos especialistas en trabajos de poda de todo tipo, tanto en altura como para arbustos y rosales.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID2()">Calcular presupuesto</button>
                                 </div>
@@ -33,9 +33,9 @@
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">Cesped artificial</h5>
-                                    <img src="../imagenes/cespedPrimerPlano.jpg"  width="300" height="150">
-                                    <p class="card-text" style="color: black;">Reduce costes de mantenimiento instalando césped artificial de calidad al mejor precio y trato excelente.</p>
+                                    <h4 class="card-title" style="color: black;">Cesped artificial</h4>
+                                    <img src="../imagenes/cespedPrimerPlano.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                    <p class="card-text" style="color: black;">Reduce costes de mantenimiento instalando césped artificial de calidad al mejor precio y calidad.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID3()">Calcular presupuesto</button>
                                 </div>
                             </div>
@@ -44,9 +44,9 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 caja">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">mantenimiento de jardines</h5>
-                                    <img src="../imagenes/mantenimiento.jpg"  width="300" height="150">
-                                    <p class="card-text" style="color: black;">Ahorra tiempo y dinero en herramientas y maquinaria contratando un servicio profesional de mantenimiento.</p>
+                                    <h4 class="card-title" style="color: black;">Mantenimiento de jardines</h4>
+                                    <img src="../imagenes/mantenimiento.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                    <p class="card-text" style="color: black;">Ahorra tiempo y dinero en herramientas y maquinaria contratando un servicio profesional.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID4()">Calcular presupuesto</button>
                                 </div>
                             </div>
@@ -55,8 +55,8 @@
                         <div class="col-lg-4 col-md-4  col-sm-4caja">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">Desbrozar</h5>
-                                    <img src="../imagenes/desbro.jpg"  width="300" height="150">
+                                    <h3 class="card-title" style="color: black;">Desbrozar</h3>
+                                    <img src="../imagenes/desbro.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Nos ocupamos de limpiar tu parcela, ya sea por la obligatoriedad municipal o para tu propio disfrute.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID5()">Calcular presupuesto</button>
                                 </div>
@@ -66,22 +66,15 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 caja">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h5 class="card-title" style="color: black;">Plantaciones</h5>
-                                    <img src="../imagenes/plantar.jpg"  width="300" height="150">
+                                    <h3 class="card-title" style="color: black;">Plantaciones</h3>
+                                    <img src="../imagenes/plantar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo. Le asesoramos en su elección.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID6()">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                
-
-                    <!-- Preguntar -->
-                    <ul v-for="cadaItem, index in foto" :key="index">
-                        <img src="cadaItem.enlace"> / <a href="{{cadaItem.enlace}}">enlace</a>
-                    </ul>
-                    
+                </section>    
             </div>
         </div>
     </div>
