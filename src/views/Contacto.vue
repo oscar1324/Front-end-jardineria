@@ -8,7 +8,7 @@
                     rellena el cajón de texto y te responderemos con la mayor brevedad. <br>
                 </p>
                 <p><b>Dirección:</b><br> Calle Regato Pinilla, 8, 37188 San Miguel de robledo, Salamanca</p>
-                <p><b>Número de teléfono:</b><br>655369586</p>
+                <p><b>Número de teléfono:</b><br>655 36 95 86</p>
                 <p><b>Email:</b><br>jardinesRobledo@gmail.com</p>
                 <p><b>Horario:</b><br>Lunes-Viernes<br>9:00-14:00/ 16:00-19:30</p>
 
