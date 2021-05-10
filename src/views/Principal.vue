@@ -2,43 +2,44 @@
     <div class="container">
         <div class="row align-item-start">
 
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h1 class="display-2 text-center"> Diseño de jardines</h1> <!-- Poner en el centro con la tipografia-->
                 <h2 class="text-center">Jardinería y paisajismo para embellecer tu hogar</h2>
                 <hr>
             
                 <!-- información de serviciocol-->
                 <section class="row widgtes justify-content-around">
-                    <div class=" col-lg-3 bg-image card shadow-1-strong cardOne" style="background-image: url(imagenes/riego.jpg);" >
-                        <div class="card-body ">
+                    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 bg-image card shadow-1-strong cardOne" style="background-image: url(imagenes/riego.jpg);" >
+                        <div class="card-body text-center">
                             <h4 class="card-title"><b>Mantenimiento</b></h4>
-                            <img src="../imagenes/corta.jpg"  width="200" height="100">
+                            <img src="../imagenes/corta.jpg"  width="200" height="100" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <p class="card-text " >
                                 Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer reforma,
                             </p>
-                            <a href="/servicio" >Servicios</a>
+                            <button type="button" class="btn btn-primary" @click="goServicios()">Servicios</button>
                             <!-- estilos de enlace  class="btn btn-outline-light"-->
                         </div>
                     </div>
-                    <div class=" col-lg-3 bg-image card shadow-1-strong cardSecond" style="background-image: url(imagenes/fondo2.jpg);" >
-                        <div class="card-body ">
+                    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 bg-image card shadow-1-strong cardSecond" style="background-image: url(imagenes/fondo2.jpg);" >
+                        <div class="card-body text-center">
                             <h4 class="card-title"><b>Sistema de riego</b></h4>
-                            <img src="../imagenes/riego2.jpg"  width="200" height="100">
+                            <img src="../imagenes/riego2.jpg"  width="200" height="100" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <p class="card-text" >
                                 Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer reforma,
                             </p>
-                            <a href="/servicio" >Servicios</a>
+                            <button type="button" class="btn btn-primary" @click="goServicios()">Servicios</button>
                         </div>
                     </div>
-                    <div class=" col-lg-3 bg-image card shadow-1-strong card3" style="background-image: url(imagenes/fondo2.jpg)" >
-                        <div class="card-body ">
+                    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 bg-image card shadow-1-strong card3" style="background-image: url(imagenes/fondo2.jpg)" >
+                        <div class="card-body text-center">
                              
                             <h4 class="card-title"><b>Cesped artificial</b></h4>
-                            <img src="../imagenes/cespedMG.jpg"  width="200" height="100">
-                            <p class="card-text" >
+                            <img src="../imagenes/cespedMG.jpg"  width="200" height="100" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <p class="card-text " >
                                 Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer reforma,
                             </p>
-                            <a href="/servicio" >Servicios</a>
+                            <button type="button" class="btn btn-primary " @click="goServicios()">Servicios</button>
+                        
                         </div>
                     </div>
                 </section>
@@ -47,21 +48,23 @@
         </div>
         <hr>
         <h3 class="text-center">Siguenos en  </h3>
-        <div class="col-lg-12">
-            <iframe class="iframe1"  src="https://www.instagram.com/p/CMKC934FmLN/embed/" width="50%" height="300px" frameborder="0"
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <iframe class="iframe1 col-lg-5 col-md-5 col-sm-5"  src="https://www.instagram.com/p/CMKC934FmLN/embed/" width="50%" height="300px" frameborder="0"
             scrolling="no" allowtransparency="true"></iframe>
 
             <a class="twitter-timeline ifram2" href="https://twitter.com/JardinesRobledo?ref_src=twsrc%5Etfw" width="50%" height="300px"></a>
-            <div  class="descripcion">
+            <div  class="col-lg-5 col-md-5 col-sm-5 descripcion text-center ">
                 <p>
                     Jardines de Kalmia es su empresa de la sierra de Francia.<br> 
                     Entre los servicios que ofrecemos está el mantenimiento <br> 
                     del jardín, diseño y ejecución de jardines nuevos, trabajos de<br> 
                     poda e instalaciones de césped o riegos.
                 </p>
+                <p>Trabajamos con:</p>
+                <img src="../imagenes/logo1.jpg" width="100" height="80" class="col-lg-5 col-md-5 col-sm-5 col-xs-5"> 
+                <img src="../imagenes/logo2.jpg" width="100" height="80" class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
             </div>
         </div>
-        
         
     </div>
 
@@ -74,6 +77,12 @@ export default {
         return{
 
         }
+    },
+
+    methods:{
+        goServicios(){
+            this.$router.replace("/servicio");
+        }
     }
 }
 </script>
@@ -85,12 +94,15 @@ export default {
 }
 
 .cardOne{ 
+    margin-top: 10px;
     background-color: rgb(252, 192, 30);
 }
 .cardSecond{
+    margin-top: 10px;
     background-color: rgb(252, 192, 30);
 }
 .card3{
+    margin-top: 10px;
     background-color: rgb(252, 192, 30);
 }
 .a{

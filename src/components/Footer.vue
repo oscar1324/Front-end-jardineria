@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row footer text-center">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <footer>
                     <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal">Aviso legal </a>|
                     <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal">Política de privacidad </a>|
@@ -20,16 +20,6 @@
     color: white;
     background-color: rgb(45, 46, 46);
 
-}
-.redesSociales {
-    color: white;
-
-    margin-top: 5px;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    align-content: center;
 }
 .iconos .icon {
     width: 60px;
