@@ -27,8 +27,8 @@
                             Servicios
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Listar servicios</a>
-                            <a class="dropdown-item" href="#">Modificar servicios</a>
+                            <a class="dropdown-item" href="/serviciosList">Listar servicios</a>
+                            <a class="dropdown-item" href="/modificarServicio">Modificar servicios</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -36,7 +36,7 @@
                             Presupuestos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Listar presupuestos</a>
+                            <a class="dropdown-item" href="/listPresupuestos">Listar presupuestos</a>
                             <a class="dropdown-item" href="#">Eliminar presupuestos</a>
                         </div>
                     </li>
