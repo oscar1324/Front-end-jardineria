@@ -31,7 +31,11 @@
                     
                     </tr>
                 </table>
+                <div class="alert alert-danger" role="alert" v-if="borradoPresupuesto === true">
+                    <h4 class="alert-heading" >Borrado correctamente</h4>
+                </div>
             </div>
+        
         </div>
     </div>
 </template>
@@ -41,6 +45,7 @@ import axios from 'axios';
 export default {
      data(){
         return{
+            borradoPresupuesto: false,
             arrayPresupuestos:[],
         }
     },
