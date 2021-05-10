@@ -22,7 +22,7 @@
             <!-- <b style="color: red" v-if="!user.password">Constraseña obligatoria*</b> -->
           </div>
           <input type="submit" class="fadeIn fourth" value="Log In">
-         
+          <button type="button" class="btn btn-success" @click="comprobacion()">Comprobacion</button>
         </form>
 
       </div>
@@ -36,29 +36,27 @@
 import axios from 'axios';
 import {required, minLength, maxLength} from 'vuelidate/lib/validators';
 export default {
-    
-
   name: 'Login',
-  components: {
-
-  },
   data(){
     return{
+      array:[],
       username: '',
       password:'',
       mostrar:false,
-
-
       user: {
         username: '',
         password: '',
         disabled: 1
-      },
-    }
+        },
+      }
     },
-
     created(){
-        mostrar: true
+      axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
+      .then( response => {
+        this.array = response.data;
+        this.array.sort(((a,b) => b.nombre - a.nombre));
+      })
+      .catch(response => alert("Error petición obtener: " + response.status));
     },
     methods:{
         login(){
@@ -69,6 +67,19 @@ export default {
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
         },
+
+        comprobacion(){
+            console.log("insertado: " + this.user.username);
+            this.array.forEach(element =>{
+              
+              console.log("Username:  " + element.username)
+              if(this.username == element.username){
+              alert("Uusario con mismo nombre")
+              console.error("Errorrrrrrrrrrrrrrrrrr");
+            }
+            } )
+
+        }
     },
     validations:{
       user:{
