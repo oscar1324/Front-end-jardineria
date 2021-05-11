@@ -9,20 +9,49 @@
         </div>
 
         <!-- Login Form -->
-        <form v-on:submit.prevent="login" method="post" id="formularioLogin" role="form">
+        <form  action="form" v-on:submit.prevent="login" method="post" id="formularioLogin" role="form">
           <div class="form-group has-success">
-            <label for="username">Username:</label>
-            <input type="text" id="username" class="form-control col-lg-7" placeholder="Usuario..." v-model="user.username" >
-            <!-- <b style="color: red" v-if="!user.username">Nombre es obligatorio *</b> -->
-            
+            <label class="form-label" for="username">Username:</label>
+            <input 
+            type="text" 
+            id="username" 
+            class="form-input col-lg-7" 
+            placeholder="Usuario..." 
+            v-model="user.username" 
+          >
+          <!-- <b style="color: red" v-if="!user.username">Nombre es obligatorio *</b> -->
+          <!--
+            PARA PASAR USUARIO A APP VUE, DE FORMA LAZY
+            <input
+              v-bind:value="something"
+              v-on:input="something = $event.target.value">
+              Lo que nos lleva a que para hacer esto necesitas dos cosas en el componente hijo, el que tiene el input en este ejemplo:
+
+              Necesitas un prop llamado value que será el valor incicial que tiene el elemento
+              Necesitas que se emita un evento llamado input con el valor modificado para pasar al componente padre
+
+            QUEDARÍA ASÍ
+            <template>
+              <input 
+                :value="value" 
+                @input="$emit('input', $event.target.value)" />
+            </template>
+           -->
+          <label class="form-label" for="username">Username:</label>
+            <input 
+            type="text" 
+            id="password" 
+            class="form-input col-lg-7" 
+            placeholder="Contraseña..." 
+            v-model="user.password" 
+          >
+          <p class="error" v-if="user.password && !passwordHasNumbers">
+            Error. La contraseña debe tener al menos un número
+          </p>  
           </div>
-          <div class="form-group has-success">
-            <label for="password">Contraseña:</label>
-            <input type="text" id="password" class="form-control col-lg-7" placeholder="contraseña..." v-model="user.password">
-            <!-- <b style="color: red" v-if="!user.password">Constraseña obligatoria*</b> -->
-          </div>
+
           <input type="submit" class="fadeIn fourth" value="Log In">
-          <button type="button" class="btn btn-success" @click="comprobacion()">Comprobacion</button>
+          <button type="submit" class="btn btn-danger" @click="comprobacion()">Comprobacion</button>
         </form>
 
       </div>
@@ -41,15 +70,20 @@ export default {
     return{
       array:[],
       username: '',
-      password:'',
+      editedPassword: null,
       mostrar:false,
       user: {
         username: '',
-        password: '',
+        password: null,
         disabled: 1
         },
       }
     },
+    computed:{
+    passwordHasNumbers() {
+      return /\d/.test(this.user.password);
+    },
+
     created(){
       axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
       .then( response => {
@@ -57,6 +91,9 @@ export default {
         this.array.sort(((a,b) => b.nombre - a.nombre));
       })
       .catch(response => alert("Error petición obtener: " + response.status));
+    },
+
+
     },
     methods:{
         login(){
@@ -69,7 +106,8 @@ export default {
         },
 
         comprobacion(){
-            console.log("insertado: " + this.user.username);
+          console.log("insertado: " + this.user.username  + " / " + this.password);
+          /*
             this.array.forEach(element =>{
               
               console.log("Username:  " + element.username)
@@ -77,11 +115,11 @@ export default {
               alert("Uusario con mismo nombre")
               console.error("Errorrrrrrrrrrrrrrrrrr");
             }
-            } )
-
+            } ) */
         }
     },
-    validations:{
+  /*
+      validations:{
       user:{
         username:{
           required,
@@ -94,7 +132,7 @@ export default {
         
         }
       }
-    }
+    } */
 }
 </script>
 
