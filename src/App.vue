@@ -55,10 +55,11 @@
             </nav>
           </div>
       </div>
+      <router-view/>
+      <Footer />
     </div>
   </div>
-  <router-view/>
-  <Footer />
+
 </template>
 
 <script>
