@@ -36,7 +36,7 @@
                                     <h4 class="card-title" style="color: black;">Cesped artificial</h4>
                                     <img src="../imagenes/cespedPrimerPlano.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Reduce costes de mantenimiento instalando césped artificial de calidad al mejor precio y calidad.</p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID3()">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID3($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                     <h4 class="card-title" style="color: black;">Mantenimiento de jardines</h4>
                                     <img src="../imagenes/mantenimiento.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Ahorra tiempo y dinero en herramientas y maquinaria contratando un servicio profesional.</p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID4()">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID4($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                                     <h3 class="card-title" style="color: black;">Desbrozar</h3>
                                     <img src="../imagenes/desbro.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Nos ocupamos de limpiar tu parcela, ya sea por la obligatoriedad municipal o para tu propio disfrute.</p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID5()">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID5($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                     <h3 class="card-title" style="color: black;">Plantaciones</h3>
                                     <img src="../imagenes/plantar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo. Le asesoramos en su elección.</p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID6()">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID6($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -108,34 +108,34 @@ export default {
             console.log("Direccionar hacía presupuesto con ID: " + servicioID + " / usuario: " + usuario);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
-        direccionarconID2(){
+        direccionarconID2(usuario){
             let servicioID = 2
             console.log("Direccionar hacía presupuesto con ID: " + servicioID  + " / usuario: " + usuario);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
-        direccionarconID3(){
+        direccionarconID3(usuario){
             let servicioID = 3
             console.log("Direccionar hacía presupuesto con ID: " + servicioID);
-            this.$router.replace(`/Presupuesto/${servicioID}`)
+            this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
-        direccionarconID4(){
+        direccionarconID4(usuario){
             let servicioID = 4
             console.log("Direccionar hacía presupuesto con ID: " + servicioID);
-            this.$router.replace(`/Presupuesto/${servicioID}`)
+            this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
-        direccionarconID5(){
+        direccionarconID5(usuario){
             let servicioID = 5
             console.log("Direccionar hacía presupuesto con ID: " + servicioID);
-            this.$router.replace(`/Presupuesto/${servicioID}`)
+            this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
-        direccionarconID6(){
+        direccionarconID6(usuario){
             let servicioID = 6
             console.log("Direccionar hacía presupuesto con ID: " + servicioID);
-            this.$router.replace(`/Presupuesto/${servicioID}`)
+            this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         }
     },
     created(){
