@@ -103,6 +103,8 @@ export default {
                 console.log(response);
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
+            this.$router.replace(`/servicio/${this.user.username}`)
+            
         },
 
         comprobacion(){
@@ -118,21 +120,6 @@ export default {
             } ) */
         }
     },
-  /*
-      validations:{
-      user:{
-        username:{
-          required,
-          minlength: minLength(4),
-          maxlength: maxLength(17)          
-        },
-        password: {
-          required,
-          minlength: minLength(4),
-        
-        }
-      }
-    } */
 }
 </script>
 

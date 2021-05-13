@@ -5,7 +5,7 @@ import Servicio from '../views/Servicio.vue'
 import Presupuesto from '../views/Presupuesto.vue'
 import Contacto from '../views/Contacto.vue'
 import Administrador from '../views/Administrador.vue'
-import Usuarios from '../components/Usuarios.vue'
+import Usuarios from '../views/Usuarios.vue'
 import InsertarUsuario from '../components/InsertarUsuario.vue'
 import EliminacionUsuario from '../components/EliminacionUsuario.vue'
 import ModificarUsuario from '../components/ModificarUsuario.vue'
@@ -13,7 +13,7 @@ import ServiciosList from '../components/ServiciosList.vue'
 import ModificarServicio from '../components/ModificarServicio.vue'
 import PresupuestosList from '../components/PresupuestosList.vue' 
 import EliminarPresupuesto from '../components/EliminarPresupuesto.vue' 
-import Login from '../components/Login.vue'
+import Login from '../views/Login.vue'
 import Formulario from '../components/Formulario.vue'
 import Pruebas from '../components/Pruebas.vue'
 
@@ -24,7 +24,7 @@ const routes = [
     component: Principal
   },
   {
-    path: '/servicio',
+    path: '/servicio/:usuario',
     component: Servicio
   },
   {
@@ -32,7 +32,7 @@ const routes = [
     component: Presupuesto
   },
   {
-    path:'/Presupuesto/:id',
+    path:'/Presupuesto/:id/:usuario',
     component: Presupuesto
   },
   {

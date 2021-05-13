@@ -14,7 +14,7 @@
                                     <h4 class="card-title" style="color: black;">Sistema riego</h4>
                                     <img src="../imagenes/riego2.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">El riego es fundamental, por ello instalamos sistemas de riego eficientes además de repararlos. </p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID1()">Calcular presupuesto</button>                                            
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID1($route.params.usuario)">Calcular presupuesto</button>                                            
                                 </div>
                             </div>
                         </div>
@@ -25,7 +25,7 @@
                                     <h4 class="card-title" style="color: black;">Podas</h4>
                                     <img src="../imagenes/podar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                                     <p class="card-text" style="color: black;">Somos especialistas en trabajos de poda de todo tipo, tanto en altura como para arbustos y rosales.</p>
-                                    <button type="button" class="btn btn-primary" @click="direccionarconID2()">Calcular presupuesto</button>
+                                    <button type="button" class="btn btn-primary" @click="direccionarconID2($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
                         </div>
@@ -103,15 +103,15 @@ export default {
     },
     
     methods:{
-        direccionarconID1(){
+        direccionarconID1(usuario){
             let servicioID = 1
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
-            this.$router.replace(`/Presupuesto/${servicioID}`)
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID + " / usuario: " + usuario);
+            this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
         direccionarconID2(){
             let servicioID = 2
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
-            this.$router.replace(`/Presupuesto/${servicioID}`)
+            console.log("Direccionar hacía presupuesto con ID: " + servicioID  + " / usuario: " + usuario);
+            this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
         direccionarconID3(){
