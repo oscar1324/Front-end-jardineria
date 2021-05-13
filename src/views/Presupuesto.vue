@@ -4,29 +4,46 @@
         <div class="row">   
             <div class="col-lg-4 col-md-4 col-sm-4" >   
                 <div class=" form-group">
-                    <div>
-                        <label> 1)Cantidad del terreno para trabajar:</label><br>
-                        <input type="radio" v-model="a"> menos de 50 m2 <br>   <!-- realizar 5% rebaja -->
-                        <input type="radio" v-model="b"> entre 50 y 150 m2<br> <!-- realizar 10% rebaja -->
-                        <input type="radio" v-model="c"> entre 150 y 300 m2<br><!-- realizar 12% rebaja -->
-                        <input type="radio" v-model="d"> más de 300 m2<br>     <!-- realizar 17% rebaja -->
-                    </div>
-                    <button type="button" class="btn btn-danger" @click="envioPresupuesto($route.params.id)">Calcular presupuesto</button>
+                    
+                    <label for="enviarFormulario">
+                        <input type="radio" id="1" value="50" v-model="tipo">
+                        <span>Menos de 50 m2 </span>
+                    </label> <br>
+                    <label for="enviarFormulario">
+                        <input  type="radio" id="2" value="100"  v-model="tipo">
+                        <span>Entre 50 y 150 m2</span>
+                    </label> <br>
+                    <label for="enviarFormulario">
+                        <input  type="radio" id="2" value="200"  v-model="tipo">
+                        <span>Entre 150 y 300 m2</span>
+                    </label> <br>
+                    <label for="enviarFormulario">
+                        <input  type="radio" id="2" value="500"  v-model="tipo">
+                        <span>Más de 300 m2</span>
+                    </label> <br>
                 </div>
+                <button type="button" class="btn btn-danger" @click="envioPresupuesto($route.params.id)">Calcular presupuesto</button>
+
             </div>
+ 
             <div class="col-lg-3 col-md-3 col-sm-3 form-group" >
-                <div class=" form-group" >
-                    <label>Comentarios sobre su presupuesto:</label>
-                    <textarea cols="30" rows="5" placeholder="Escriba..." v-model="comentario"></textarea>
-                </div>
+                <label>Comentarios sobre su presupuesto:</label>
+                <textarea cols="30" rows="5" placeholder="Escriba..." v-model="comentario"></textarea>
             </div>
+     
             <div class="col-lg-3 col-md-3 col-sm-3 ">
                 <p>Se calcula el presupuesto</p>
                 <p>El presupuesto es de ... 80 euros</p>
             </div>
+            <hr>
+            <p>ID de servicio recibido: {{$route.params.id}}</p>
+            <h5>PRUEBAS CHECKBOX:</h5>
+            <div class="form-control">
+                <p>Tipo seleccionado: {{ tipo}}</p>
+            </div>
         </div>
 
-        <p>ID de servicio recibido: {{$route.params.id}}</p>
+        
    </div>
 </template>
 
@@ -35,11 +52,9 @@ import axios from 'axios'
 export default {
     data(){
         return{
-            a: '5%',
-            b: '15%',
-            c: '',
-            d: '',
-            comentario: ''
+            comentario: '',
+            enviarFormulario:[],
+            tipo: ''
          
         }
     },
@@ -51,7 +66,7 @@ export default {
             
             let objeto =  {
                 id_presupuestos: id,
-                cantidad_terreno: this.a,
+                cantidad_terreno: this.tipo,
                 fecha_presupuesto: fecha,
                 comentario: this.comentario,
                 username: 'oscar_bichito',
