@@ -4,7 +4,7 @@
             <div class="col-lg-12  col-sm-12">
                 <section id="Servicios">
                     <div class="titulo text-center">
-                        <h1 style="color: white">SERVICIOS DE JARDINERIA ROBLEDO</h1>
+                        <h1 style="color: white">SERVICIOS DISPONIBLES</h1>
                     </div>
                 
                     <div class="row">
@@ -24,7 +24,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: black;">Podas</h4>
                                     <img src="../imagenes/podar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                                    <p class="card-text" style="color: black;">Somos especialistas en trabajos de poda de todo tipo, tanto en altura como para arbustos y rosales.</p>
+                                    <p class="card-text" style="color: black;">Somos especialistas en trabajos de poda de todo tipo, tanto en altura como para arbustos.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID2($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
@@ -44,9 +44,9 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 caja">
                             <div class="card text-center">
                                 <div class="card-body">
-                                    <h4 class="card-title" style="color: black;">Mantenimiento de jardines</h4>
+                                    <h4 class="card-title" style="color: black;">Mantenimiento </h4>
                                     <img src="../imagenes/mantenimiento.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                                    <p class="card-text" style="color: black;">Ahorra tiempo y dinero en herramientas y maquinaria contratando un servicio profesional.</p>
+                                    <p class="card-text" style="color: black;">Ahorra tiempo y dinero en herramientas y maquinaria profesional.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID4($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                 <div class="card-body">
                                     <h3 class="card-title" style="color: black;">Desbrozar</h3>
                                     <img src="../imagenes/desbro.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                                    <p class="card-text" style="color: black;">Nos ocupamos de limpiar tu parcela, ya sea por la obligatoriedad municipal o para tu propio disfrute.</p>
+                                    <p class="card-text" style="color: black;">Nos ocupamos los bordes inalcanzables que tantos problemas dan.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID5($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                                 <div class="card-body">
                                     <h3 class="card-title" style="color: black;">Plantaciones</h3>
                                     <img src="../imagenes/plantar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                                    <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo. Le asesoramos en su elección.</p>
+                                    <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID6($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
                             </div>
