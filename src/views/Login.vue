@@ -1,57 +1,36 @@
 <template >
-<!--   Meter v-if para que se muestre -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 wrapper fadeInDown" style="background-color: green">
+    <div class="col-lg-12 col-md-12 col-sm-12 wrapper fadeInDown" >
       <div id="formContent">
         <div class="fadeIn first">
           <img src="../imagenes/usuario2.jpg" id="icon" alt="User Icon" width="100" height="150"/>
         </div>
 
-        <!-- Login Form -->
         <form  action="form" v-on:submit.prevent="login" method="post" id="formularioLogin" role="form">
           <div class="form-group has-success">
-            <label class="form-label" for="username">Username:</label>
+            <label class="form-label" for="username">Nombre usuario: </label>
             <input 
             type="text" 
             id="username" 
             class="form-input col-lg-7" 
             placeholder="Usuario..." 
             v-model="user.username" 
+            required
           >
-          <!-- <b style="color: red" v-if="!user.username">Nombre es obligatorio *</b> -->
-          <!--
-            PARA PASAR USUARIO A APP VUE, DE FORMA LAZY
-            <input
-              v-bind:value="something"
-              v-on:input="something = $event.target.value">
-              Lo que nos lleva a que para hacer esto necesitas dos cosas en el componente hijo, el que tiene el input en este ejemplo:
-
-              Necesitas un prop llamado value que será el valor incicial que tiene el elemento
-              Necesitas que se emita un evento llamado input con el valor modificado para pasar al componente padre
-
-            QUEDARÍA ASÍ
-            <template>
-              <input 
-                :value="value" 
-                @input="$emit('input', $event.target.value)" />
-            </template>
-           -->
-          <label class="form-label" for="username">Username:</label>
+          <label class="form-label" for="username">Contraseña:</label>
             <input 
             type="text" 
             id="password" 
             class="form-input col-lg-7" 
             placeholder="Contraseña..." 
             v-model="user.password" 
+            required
           >
-          <p class="error" v-if="user.password && !passwordHasNumbers">
-            Error. La contraseña debe tener al menos un número
-          </p>  
           </div>
 
           <input type="submit" class="fadeIn fourth" value="Log In">
-          <button type="submit" class="btn btn-danger" @click="comprobacion()">Comprobacion</button>
+          <button type="button" class="btn btn-danger" @click="comprobacion()">comprobar</button>
         </form>
 
       </div>
@@ -63,7 +42,6 @@
 
 <script>
 import axios from 'axios';
-import {required, minLength, maxLength} from 'vuelidate/lib/validators';
 export default {
   name: 'Login',
   data(){
@@ -79,10 +57,6 @@ export default {
         },
       }
     },
-    computed:{
-    passwordHasNumbers() {
-      return /\d/.test(this.user.password);
-    },
 
     created(){
       axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
@@ -91,9 +65,6 @@ export default {
         this.array.sort(((a,b) => b.nombre - a.nombre));
       })
       .catch(response => alert("Error petición obtener: " + response.status));
-    },
-
-
     },
     methods:{
         login(){
@@ -125,8 +96,6 @@ export default {
 
 <style scoped>
 
-/* BASIC */
-
 html {
   background-color: #56baed;
 }
@@ -153,18 +122,17 @@ h2 {
   color: #cccccc;
 }
 
-
-
-/* STRUCTURE */
-
 .wrapper {
   display: flex;
   align-items: center;
   flex-direction: column; 
   justify-content: center;
   width: 100%;
+  height: 800px;
   min-height: 100%;
   padding: 20px;
+  background-image: url(https://i.pinimg.com/originals/32/59/b4/3259b419f4e8f069b2fd6aefb9f15ae0.jpg);
+  margin-bottom: 10px;
 }
 
 #formContent {
@@ -190,10 +158,6 @@ h2 {
   border-radius: 0 0 10px 10px;
 }
 
-
-
-/* TABS */
-
 h2.inactive {
   color: #cccccc;
 }
@@ -202,11 +166,6 @@ h2.active {
   color: #0d0d0d;
   border-bottom: 2px solid #5fbae9;
 }
-
-
-
-/* FORM TYPOGRAPHY*/
-
 input[type=button], input[type=submit], input[type=reset]  {
   background-color: #56baed;
   border: none;
@@ -270,12 +229,7 @@ input[type=text]:focus {
 input[type=text]:placeholder {
   color: #cccccc;
 }
-
-
-
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
+/* ANIMACIONES */
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -310,8 +264,6 @@ input[type=text]:placeholder {
     transform: none;
   }
 }
-
-/* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -348,13 +300,11 @@ input[type=text]:placeholder {
   -moz-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
-
 .fadeIn.fourth {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
 }
-
 /* Simple CSS3 Fade-in Animation */
 .underlineHover:after {
   display: block;
@@ -374,10 +324,6 @@ input[type=text]:placeholder {
 .underlineHover:hover:after{
   width: 100%;
 }
-
-
-
-/* OTHERS */
 
 *:focus {
     outline: none;
