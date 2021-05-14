@@ -14,13 +14,16 @@ import ModificarServicio from '../components/ModificarServicio.vue'
 import PresupuestosList from '../components/PresupuestosList.vue' 
 import EliminarPresupuesto from '../components/EliminarPresupuesto.vue' 
 import Login from '../views/Login.vue'
-import Formulario from '../components/Formulario.vue'
-import Pruebas from '../components/Pruebas.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Principal',
+    component: Principal
+  },
+  {
+    path: '/',
+    name: 'Principal/:usuario',
     component: Principal
   },
   {
@@ -46,14 +49,6 @@ const routes = [
   {
     path: '/login',
     component: Login
-  },
-  {
-    path: '/formulario',
-    component: Formulario
-  },
-  {
-    path: '/pruebas',
-    component: Pruebas
   },
   // Usuarios
   {
