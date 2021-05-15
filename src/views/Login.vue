@@ -82,15 +82,15 @@ export default {
 
         comprobacion(){
           console.log("insertado: " + this.user.username  + " / " + this.password);
-          /*
+          
             this.array.forEach(element =>{
               
               console.log("Username:  " + element.username)
-              if(this.username == element.username){
-              alert("Uusario con mismo nombre")
-              console.error("Errorrrrrrrrrrrrrrrrrr");
+              if(this.user.username === element.username){
+              console.warn("MISMO NOMBRE");
+              console.error("MISMO NOMBRE");
             }
-            } ) */
+            } ) 
         }
     },
 }

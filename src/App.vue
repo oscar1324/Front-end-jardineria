@@ -15,8 +15,8 @@
           <a href="/Principal" class="navbar-brand ">
             <img src="./imagenes/flor.jpg" width="170" height="70" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
           </a><br>
-          <router-link to="/Principal" class="enlace">Inicio</router-link>      <br> 
-          <router-link to="/servicio/:usuario" class="enlace">Servicios</router-link>          <br> 
+          <router-link to="/Principal" class="enlace">Inicio</router-link>            <br> 
+          <router-link to="/servicio/:usuario" class="enlace">Servicios</router-link> <br> 
           <router-link to="/Presupuesto" class="enlace">Presupuesto</router-link>     <br> 
           <router-link to="/Contacto" class="enlace">Contacto</router-link>           <br> 
           <router-link to="/login" class="enlace">Login</router-link>                 <br> 
