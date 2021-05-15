@@ -22,8 +22,8 @@ const routes = [
     component: Principal
   },
   {
-    path: '/',
-    name: 'Principal/:usuario',
+    path: '/:usuario',
+    name: 'Principal',
     component: Principal
   },
   {

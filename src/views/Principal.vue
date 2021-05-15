@@ -9,28 +9,28 @@
             
                 <!-- información de serviciocol-->
                 <section class="row widgtes justify-content-around">
-                    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 bg-image card shadow-1-strong cardOne" style="background-image: url(imagenes/riego.jpg);" >
+                    <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 bg-image card shadow-1-strong cardOne" style="background-image: url(imagenes/riego.jpg);" >
                         <div class="card-body text-center">
                             <h4 class="card-title"><b>Mantenimiento</b></h4>
                             <img src="../imagenes/corta.jpg"  width="200" height="100" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <p class="card-text " >
                                 Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer reforma,
                             </p>
-                            <button type="button" class="btn btn-primary" @click="goServicios()">Servicios</button>
+                            <button type="button" class="btn btn-primary" @click="goServicios($route.params.usuario)">Servicios</button>
                             <!-- estilos de enlace  class="btn btn-outline-light"-->
                         </div>
                     </div>
-                    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 bg-image card shadow-1-strong cardSecond" style="background-image: url(imagenes/fondo2.jpg);" >
+                    <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 bg-image card shadow-1-strong cardSecond" style="background-image: url(imagenes/fondo2.jpg);" >
                         <div class="card-body text-center">
                             <h4 class="card-title"><b>Sistema de riego</b></h4>
                             <img src="../imagenes/riego2.jpg"  width="200" height="100" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <p class="card-text" >
                                 Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer reforma,
                             </p>
-                            <button type="button" class="btn btn-primary" @click="goServicios()">Servicios</button>
+                            <button type="button" class="btn btn-primary" @click="goServicios($route.params.usuario)">Servicios</button>
                         </div>
                     </div>
-                    <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3 bg-image card shadow-1-strong card3" style="background-image: url(imagenes/fondo2.jpg)" >
+                    <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-4 bg-image card shadow-1-strong card3" style="background-image: url(imagenes/fondo2.jpg)" >
                         <div class="card-body text-center">
                              
                             <h4 class="card-title"><b>Cesped artificial</b></h4>
@@ -38,7 +38,7 @@
                             <p class="card-text " >
                                 Nuestros paisajistas realizan una proyección en 3D para optimizar el sitio al máximo. Si su jardín es pequeño y desea hacer reforma,
                             </p>
-                            <button type="button" class="btn btn-primary " @click="goServicios()">Servicios</button>
+                            <button type="button" class="btn btn-primary " @click="goServicios($route.params.usuario)">Servicios</button>
                         
                         </div>
                     </div>
@@ -80,8 +80,9 @@ export default {
     },
 
     methods:{
-        goServicios(){
-            this.$router.replace("/servicio");
+        goServicios(usuario){
+            console.log("Nombre del usuario: " + usuario);
+            this.$router.replace(`/servicio/${usuario}`);
         }
     }
 }
