@@ -1,7 +1,6 @@
 <template>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
+
                 <h3 class="text-center"><b>Presupuestos</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
@@ -9,8 +8,8 @@
                         <th>Cantidad terreno</th>
                         <th>Fecha</th>
                         <th>Perteneciente a</th>
-                        <th>Disabled </th>
                         <th>Comentario</th>
+                        <th>Precio/€</th>
                         <th>Foto</th>
                             
                     </tr>
@@ -20,16 +19,15 @@
                         <td>{{cadaPresupuesto.cantidad_terreno}}</td>
                         <td>{{cadaPresupuesto.fecha_presupuesto}}</td>
                         <td>{{cadaPresupuesto.username}}</td>
-                        <td>{{cadaPresupuesto.disabled}}</td>
                         <td>{{cadaPresupuesto.comentario}}</td>
+                        <td>{{cadaPresupuesto.precio}}</td>
                         <td>
                             <img src="../imagenes/presu.jpg" width="40">
                         </td>
                     
                     </tr>
                 </table>
-            </div>
-        </div>
+
     </div>
 </template>
 
