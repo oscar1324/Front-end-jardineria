@@ -14,8 +14,10 @@
             type="text" 
             id="username" 
             class="form-input col-lg-7" 
-            placeholder="Usuario..." 
+            placeholder="@Usuario" 
             v-model="user.username" 
+            pattern="@.{3,}"
+            title="Introduzca presentando el siguiente formato: @Nombre"
             required
           >
           <label class="form-label" for="username">Contraseña:</label>
@@ -74,7 +76,7 @@ export default {
                 console.log(response);
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
-            this.$router.replace(`/servicio/${this.user.username}`)
+            this.$router.replace(`/${this.user.username}`)
             
         },
 
