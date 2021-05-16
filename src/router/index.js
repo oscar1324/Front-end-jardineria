@@ -6,9 +6,8 @@ import Presupuesto from '../views/Presupuesto.vue'
 import Contacto from '../views/Contacto.vue'
 import Administrador from '../views/Administrador.vue'
 import Usuarios from '../views/Usuarios.vue'
-import InsertarUsuario from '../components/InsertarUsuario.vue'
 import EliminacionUsuario from '../components/EliminacionUsuario.vue'
-import ModificarUsuario from '../components/ModificarUsuario.vue'
+import ModificarUsuario from '../views/ModificarUsuario.vue'
 import ServiciosList from '../components/ServiciosList.vue'
 import ModificarServicio from '../components/ModificarServicio.vue'
 import PresupuestosList from '../components/PresupuestosList.vue' 
@@ -18,8 +17,8 @@ import Login from '../views/Login.vue'
 const routes = [
   {
     path: '/',
-    name: 'Principal',
-    component: Principal
+    name: 'Login',
+    component: Login
   },
   {
     path: '/:usuario',
@@ -54,10 +53,6 @@ const routes = [
   {
     path: '/usuarios/:usuario',
     component: Usuarios
-  },
-  {
-    path: '/insertarUsuario',
-    component: InsertarUsuario
   },
   
   {
