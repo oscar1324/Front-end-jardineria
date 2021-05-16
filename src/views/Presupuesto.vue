@@ -61,9 +61,9 @@ export default {
             console.log("Envio presupuesto: " + fecha);
             
             let objeto =  {
-                id_presupuestos: id,
-                cantidad_terreno: this.tipo,
-                fecha_presupuesto: fecha,
+                idPresupuestos: id,
+                cantidadTerreno: this.tipo,
+                fechaPresupuesto: fecha,
                 comentario: this.comentario,
                 username: usuario,
                 disabled: 1

@@ -14,8 +14,8 @@
                     </tr>
 
                     <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td>{{cadaPresupuesto.cantidad_terreno}}</td>
-                        <td>{{cadaPresupuesto.fecha_presupuesto}}</td>
+                        <td>{{cadaPresupuesto.cantidadTerreno}}</td>
+                        <td>{{cadaPresupuesto.fechaPresupuesto}}</td>
                         <td>{{cadaPresupuesto.username}}</td>
                         <td>{{cadaPresupuesto.comentario}}</td>
                         <td>{{cadaPresupuesto.precio}}</td>

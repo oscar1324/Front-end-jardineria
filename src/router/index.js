@@ -4,7 +4,6 @@ import Principal from '../views/Principal.vue'
 import Servicio from '../views/Servicio.vue'
 import Presupuesto from '../views/Presupuesto.vue'
 import Contacto from '../views/Contacto.vue'
-import Administrador from '../views/Administrador.vue'
 import Usuarios from '../views/Usuarios.vue'
 import EliminacionUsuario from '../views/EliminacionUsuario.vue'
 import ModificarUsuario from '../views/ModificarUsuario.vue'
@@ -40,10 +39,6 @@ const routes = [
   {
     path:'/Contacto',
     component:Contacto
-  },
-  {
-    path: '/administrador',
-    component: Administrador
   },
   {
     path: '/login',

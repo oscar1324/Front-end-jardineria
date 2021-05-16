@@ -11,7 +11,7 @@
         <img src="./imagenes/flor.jpg" width="80">
       </div>
       <div class="col-lg-2 col-md-2 col-md-2 col-xs-2 menu text-center">
-        <h2>MENU LATERAL:</h2>
+        <h3 style="color:white" class="text-center">MENU LATERAL</h3>
           <a href="/Principal" class="navbar-brand ">
             <img src="./imagenes/flor.jpg" width="170" height="70" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
           </a><br>

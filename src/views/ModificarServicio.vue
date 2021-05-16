@@ -13,13 +13,13 @@
                     </tr>
 
                     <tr v-for="(cadaServicio, index) in arrayServicios" :key="index" class="estiloTable2">
-                        <td><b>{{cadaServicio.descripcion_servicio}}</b></td>
-                        <td>{{cadaServicio.precio_metro}}</td>
+                        <td><b>{{cadaServicio.descripcionServicio}}</b></td>
+                        <td>{{cadaServicio.precioMetro}}</td>
                         <td>
                             <img src="../imagenes/herra1.jpg" height="20">
                         </td>
                         <td>
-                            <button type="button" class="btn btn-primary" @click="pasarDato(id = cadaServicio.id_servicios, nombre = cadaServicio.descripcion_servicio)">Modificar</button>
+                            <button type="button" class="btn btn-primary" @click="pasarDato(id = cadaServicio.idServicios, nombre = cadaServicio.descripcionServicio)">Modificar</button>
                         </td>
                     </tr>
                 </table>
@@ -57,7 +57,7 @@ export default {
         axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
         .then( response => {
             this.arrayServicios = response.data;
-            this.arrayServicios.sort(((a,b) => b.precio_metro - a.precio_metro));
+            this.arrayServicios.sort(((a,b) => b.precioMetro - a.precioMetro));
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
@@ -67,7 +67,7 @@ export default {
         axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
         .then( response => {
             this.arrayServicios = response.data;
-            this.arrayServicios.sort(((a,b) => b.precio_metro - a.precio_metro));
+            this.arrayServicios.sort(((a,b) => b.precioMetro - a.precioMetro));
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },

@@ -12,8 +12,8 @@
                     </tr>
 
                     <tr v-for="(cadaServicio, index) in arrayServicios" :key="index" class="estiloTable2">
-                        <td>{{cadaServicio.descripcion_servicio}}</td>
-                        <td>{{cadaServicio.precio_metro}}</td>
+                        <td>{{cadaServicio.descripcionServicio}}</td>
+                        <td>{{cadaServicio.precioMetro}}</td>
                         <td>
                             <img src="../imagenes/herra1.jpg" height="40">
                         </td>
@@ -38,7 +38,7 @@ export default {
         axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
         .then( response => {
             this.arrayServicios = response.data;
-            this.arrayServicios.sort(((a,b) => b.precio_metro - a.precio_metro));
+            this.arrayServicios.sort(((a,b) => b.precioMetro - a.precioMetro));
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
