@@ -20,7 +20,6 @@
           <router-link to="/Presupuesto" class="enlace">Presupuesto</router-link>     <br> 
           <router-link to="/Contacto" class="enlace">Contacto</router-link>           <br> 
           <router-link to="/login" class="enlace">Login</router-link>                 <br> 
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/administrador" class="enlace">Administrador</router-link> 
           <hr>
           <h5 v-if="$route.params.usuario === '@Administrador'" class="apartado">Usuarios:</h5><br>
           <router-link v-if="$route.params.usuario === '@Administrador'" to="/usuarios/@Administrador" class="enlace">Listar </router-link> <br> 

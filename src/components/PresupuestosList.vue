@@ -8,17 +8,20 @@
                         <th>Fecha</th>
                         <th>Perteneciente a</th>
                         <th>Comentario</th>
+                        <th>disabled</th>
                         <th>Precio/€</th>
+                      
                         <th></th>
                             
                     </tr>
 
                     <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td>{{cadaPresupuesto.cantidadTerreno}}</td>
-                        <td>{{cadaPresupuesto.fechaPresupuesto}}</td>
-                        <td>{{cadaPresupuesto.username}}</td>
-                        <td>{{cadaPresupuesto.comentario}}</td>
-                        <td>{{cadaPresupuesto.precio}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.cantidadTerreno}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.fechaPresupuesto}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.username}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.comentario}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.disabled}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.precio}}</td>
                         <td>
                             <img src="../imagenes/presu.jpg" width="40">
                         </td>

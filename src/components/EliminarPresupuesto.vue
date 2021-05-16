@@ -14,12 +14,12 @@
                     </tr>
 
                     <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td>{{cadaPresupuesto.cantidad_terreno}}</td>
-                        <td>{{cadaPresupuesto.fecha_presupuesto}}</td>
-                        <td>{{cadaPresupuesto.username}}</td>
-                        <td>{{cadaPresupuesto.comentario}}</td>
+                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.cantidadTerreno}}</td>
+                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.fechaPresupuesto}}</td>
+                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.username}}</td>
+                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.comentario}}</td>
                         <td>
-                            <button type="button" class="btn btn-danger" @click="eliminarPresupuesto(cadaPresupuesto.id_presupuestos,cadaPresupuesto.cantidad_terreno,cadaPresupuesto.fecha_presupuesto,cadaPresupuesto.comentario,cadaPresupuesto.username)">
+                            <button type="button" class="btn btn-danger" @click="eliminarPresupuesto(cadaPresupuesto.idPresupuestos,cadaPresupuesto.cantidadTerreno,cadaPresupuesto.fechaPresupuesto,cadaPresupuesto.comentario,cadaPresupuesto.username)">
                                 eliminar
                             </button>
                         </td>
@@ -49,7 +49,7 @@ export default {
         axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
         .then( response => {
             this.arrayPresupuestos = response.data;
-            console.log(this.arrayPresupuestos);
+            
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
@@ -58,17 +58,16 @@ export default {
         axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
         .then( response => {
             this.arrayPresupuestos = response.data;
-            console.log(this.arrayPresupuestos);
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
 
     methods:{
-        eliminarPresupuesto(id_presupuestos, cantidad_terreno, fecha_presupuesto, comentario, username){
+        eliminarPresupuesto(idPresupuestos, cantidadTerreno, fechaPresupuesto, comentario, username){
             let presupuesto = {
-                id_presupuestos,
-                cantidad_terreno,
-                fecha_presupuesto,
+                idPresupuestos,
+                cantidadTerreno,
+                fechaPresupuesto,
                 comentario,
                 username,
                 disabled:0
