@@ -7,19 +7,17 @@
                     <tr class="estiloTable1">
                         <th>Username</th>
                         <th>Password</th>
-                        <th>Disabled</th> 
                         <th>Eliminación de usuario</th>         
                     </tr>
 
                     <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
                         <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.username}}</p></td>
                         <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
-                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.disabled}}</p></td>
                         <td  v-if="cadaUsuario.disabled === 1">
-                            <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
-                            <button type="button" class="btn btn-danger" @click="eliminarUsuario(cadaUsuario.username, cadaUsuario.password, cadaUsuario.disabled)" v-if="cadaUsuario.disabled === 1">
+                            <button type="button" class="btn btn-danger boton" @click="eliminarUsuario(cadaUsuario.username, cadaUsuario.password, cadaUsuario.disabled)" v-if="cadaUsuario.disabled === 1">
                                 eliminar
                             </button>
+                            <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
                             
                         </td>
                     </tr>
@@ -81,8 +79,9 @@ export default {
 </script>
 <style scoped>
 .container{
-
+    background-color: rgb(211, 208, 55);
     color: black;
+    height: 1000px;
 
 }
 .estiloTable1{
@@ -95,4 +94,7 @@ export default {
     border: solid black 1px;
 }
 .aviso{margin-top: 10px;}
+.boton{
+    margin-right: 15px;
+}
 </style>

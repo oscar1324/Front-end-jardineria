@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row">
        
-                <div class="col-lg-12 col-md-12 col-sm-12 formulario">
+            <div class="col-lg-12 col-md-12 col-sm-12 formulario">
                 <h3 class="text-center"><b>Servicios</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
                         <th>ID</th>
-                        <th>Descripción del servicio</th>
+                        <th>Tipo del servicio</th>
                         <th>Precio m/€</th>
                         <th>Servicios</th>
                         <th>Modificar</th>
@@ -21,42 +21,36 @@
                             <img src="../imagenes/herra1.jpg" height="20">
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success" @click="mostrarFormulario = true">Modificar</button>
+                            <button type="button" class="btn btn-success" @click="pasarDato(id = cadaServicio.id_servicios, nombre = cadaServicio.descripcion_servicio)">Modificar</button>
                         </td>
                     </tr>
                 </table>
-            </div>
-            <div class="col-lg-12">
-                 <div class="col-lg-12 col-md-12 col-sm-12 pegado" >
-                <h3 class="text-center"><b>Modificación de precio:</b></h3>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 formulario">
-                <label>Descripción servicio:</label>
-                <input type="text" class="form-control col-lg-7" placeholder="descripción del nuevo servicio..." v-model="servicio.descripcion_servicio">
-                <label>Precio:</label>
-                <input type="text" class="form-control col-lg-7" placeholder="precio metro" v-model="servicio.precio_metro">
-                <button type="button" class="btn btn-success" @click="nuevoServicio()">Agregar nuevo servicio</button>
+                <tabla v-if="mostrarFormulario === true" :idRecibido="id" :nombreRecibido="nombre"></tabla>
             </div>
 
-            <div class="alert alert-success" role="alert" v-if="aviso === true">
-                <h4 class="alert-heading" >Insertado correctamente</h4>
-            </div>
-            </div>
         </div>
     </div>
 </template>
 
 <script>
+import tabla from '../components/tablaModificarServicios';
 import axios from 'axios';
 export default {
     data(){
         return{
+            id: '',
             arrayServicios:[],
-            
-            servicio: {
-                descripcion_servicio :'', 
-                precio_metro: '',
-            },
+            mostrarFormulario: false
+
+        }
+    },
+    components:{
+        tabla
+    },
+    methods:{
+        pasarDato(id, nombre){
+            console.log("Paso id: " + id + " / " + nombre);
+            this.mostrarFormulario = true
         }
     },
 
@@ -70,6 +64,7 @@ export default {
         .catch(response => alert("Error petición obtener: " + response.status));
     },
 
+   
     updated(){
         axios.get('http://localhost:8080/jardinrobledo/v1/servicios')
         .then( response => {
@@ -78,18 +73,9 @@ export default {
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
+  
 
-    methods:{
-        modificarServicio(){
-            axios.put('http://localhost:8080/jardinrobledo/v1/servicios/', this.servicio)
-            .then( response =>{
-                console.log(response);
-            })
-            .catch(response => console.log("Error petición modificar: " + response.status));
-            console.log("Objeto: " , this.servicio);
-         
-        },
-    }
+
     
 }
 </script>

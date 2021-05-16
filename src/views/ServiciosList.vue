@@ -3,21 +3,19 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 formulario">
-                <h3 class="text-center"><b>Servicios</b></h3>
+                <h3 class="text-center"><b>Servicios disponibles:</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
-                        <th>ID</th>
                         <th>Descripción del servicio</th>
                         <th>Precio m/€</th>
                         <th>Servicios</th>
                     </tr>
 
                     <tr v-for="(cadaServicio, index) in arrayServicios" :key="index" class="estiloTable2">
-                        <td>{{cadaServicio.id_servicios}}</td>
                         <td>{{cadaServicio.descripcion_servicio}}</td>
                         <td>{{cadaServicio.precio_metro}}</td>
                         <td>
-                            <img src="../imagenes/herra1.jpg" height="20">
+                            <img src="../imagenes/herra1.jpg" height="40">
                         </td>
                     </tr>
                 </table>
@@ -52,8 +50,9 @@ export default {
 </script>
 <style scoped>
 .container{
-
+    background-color: rgb(211, 208, 55);
     color: black;
+    height: 1000px;
 
 }
 .estiloTable1{
@@ -61,7 +60,6 @@ export default {
     background-color: black;
     color: white;
 }
-/**background-color: antiquewhite; */
 .estiloTable2{
     border: solid black 1px;
 }

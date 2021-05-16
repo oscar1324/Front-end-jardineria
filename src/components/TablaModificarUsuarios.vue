@@ -7,7 +7,7 @@
                         <label>Contraseña:</label>
                         <input type="text" class="form-control col-lg-7 text-center" placeholder="contraseña..." v-model="user.password" required><br>
                         
-                        <input type="submit" class="fadeIn fourth" value="Modificar nuevo usuario">
+                        <input type="submit" class="fadeIn fourth" value="Modificar contraseña ">
                     </div>
                     <div class="alert alert-success" role="alert" v-if="inserccionUsuario === true">
                         <h4 class="alert-heading" >Insertado correctamente</h4>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data(){
         return{
@@ -24,12 +25,13 @@ export default {
             array: [],
 
             user: {
-                username: '',
+                username: this.nombreRecibido,
                 password: '',
                 disabled: 1
             },
         }
     },
+    props:['nombreRecibido'],
     methods:{
         modificarUsuario(){
             console.log("datos a cambiar: " + this.user.username + " / " + this.user.password);

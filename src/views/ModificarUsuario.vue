@@ -19,11 +19,11 @@
                         <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
                     </td>
                     <td v-if="cadaUsuario.disabled === 1">
-                        <button type="button" class="btn btn-success" @click="mostrarFormulario = true">Modificar</button>
+                        <button type="button" class="btn btn-success" @click="modificarU(nombre = cadaUsuario.username)">Modificar</button>
                     </td>
                 </tr>
             </table>
-            <tabla v-if="mostrarFormulario === true"></tabla>
+            <tabla v-if="mostrarFormulario === true" :nombreRecibido="nombre"></tabla>
 
         </div>
     </div>
@@ -52,6 +52,12 @@ export default {
     components:  {
         tabla
        
+    },
+    methods:{
+        modificarU(nombre){
+            console.log("Usuario: " + nombre);
+            this.mostrarFormulario = true
+        }
     },
 
     created(){
