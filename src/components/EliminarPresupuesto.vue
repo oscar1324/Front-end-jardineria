@@ -5,25 +5,20 @@
                 <h3 class="text-center"><b>Presupuestos</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
-                        <th>ID</th>
                         <th>Cantidad terreno</th>
                         <th>Fecha</th>
                         <th>Perteneciente a</th>
-                        <th>Disabled </th>
                         <th>Comentario</th>
                         <th>Eliminar</th>
                             
                     </tr>
 
                     <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td>{{cadaPresupuesto.id_presupuestos}}</td>
                         <td>{{cadaPresupuesto.cantidad_terreno}}</td>
                         <td>{{cadaPresupuesto.fecha_presupuesto}}</td>
                         <td>{{cadaPresupuesto.username}}</td>
-                        <td>{{cadaPresupuesto.disabled}}</td>
                         <td>{{cadaPresupuesto.comentario}}</td>
                         <td>
-                            <img src="../imagenes/presu.jpg" width="40">
                             <button type="button" class="btn btn-danger" @click="eliminarPresupuesto(cadaPresupuesto.id_presupuestos,cadaPresupuesto.cantidad_terreno,cadaPresupuesto.fecha_presupuesto,cadaPresupuesto.comentario,cadaPresupuesto.username)">
                                 eliminar
                             </button>
@@ -92,12 +87,13 @@ export default {
 </script>
 <style scoped>
 .container{
-
+    background-color: rgb(211, 208, 55);
     color: black;
+    height: 1000px;
 
 }
 .estiloTable1{
-    border: solid white 1px;
+    border: solid black 1px;
     background-color: black;
     color: white;
 }

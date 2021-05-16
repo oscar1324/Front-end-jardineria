@@ -11,7 +11,7 @@
                     </tr>
 
                     <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.username}}</p></td>
+                        <td v-if="cadaUsuario.disabled === 1"><b>{{cadaUsuario.username}}</b></td>
                         <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
                         <td v-if="cadaUsuario.disabled === 1">
                             <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">

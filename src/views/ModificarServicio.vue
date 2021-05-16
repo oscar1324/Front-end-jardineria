@@ -2,11 +2,10 @@
     <div class="container">
         <div class="row">
        
-            <div class="col-lg-12 col-md-12 col-sm-12 formulario">
+            <div class="col-lg-12 col-md-12 col-sm-12 ">
                 <h3 class="text-center"><b>Servicios</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
-                        <th>ID</th>
                         <th>Tipo del servicio</th>
                         <th>Precio m/€</th>
                         <th>Servicios</th>
@@ -14,14 +13,13 @@
                     </tr>
 
                     <tr v-for="(cadaServicio, index) in arrayServicios" :key="index" class="estiloTable2">
-                        <td>{{cadaServicio.id_servicios}}</td>
-                        <td>{{cadaServicio.descripcion_servicio}}</td>
+                        <td><b>{{cadaServicio.descripcion_servicio}}</b></td>
                         <td>{{cadaServicio.precio_metro}}</td>
                         <td>
                             <img src="../imagenes/herra1.jpg" height="20">
                         </td>
                         <td>
-                            <button type="button" class="btn btn-success" @click="pasarDato(id = cadaServicio.id_servicios, nombre = cadaServicio.descripcion_servicio)">Modificar</button>
+                            <button type="button" class="btn btn-primary" @click="pasarDato(id = cadaServicio.id_servicios, nombre = cadaServicio.descripcion_servicio)">Modificar</button>
                         </td>
                     </tr>
                 </table>
@@ -81,15 +79,19 @@ export default {
 </script>
 <style scoped>
 .container{
+    background-color: rgb(211, 208, 55);
     color: black;
+    height: 1000px;
+
 }
 .estiloTable2{
     border: solid black 1px;
 }
 .formulario{
     margin-bottom: 15px;
-    background-color:rgb(245, 194, 127);
-    padding-bottom: 10px;
+    border:3px solid black;
+    border-radius:22px;
+    padding: 10px;
 }
 
 .margenP{

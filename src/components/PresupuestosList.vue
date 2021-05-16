@@ -4,18 +4,16 @@
                 <h3 class="text-center"><b>Presupuestos</b></h3>
                 <table class="container-fluid">
                     <tr class="estiloTable1">
-                        <th>ID</th>
                         <th>Cantidad terreno</th>
                         <th>Fecha</th>
                         <th>Perteneciente a</th>
                         <th>Comentario</th>
                         <th>Precio/€</th>
-                        <th>Foto</th>
+                        <th></th>
                             
                     </tr>
 
                     <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td>{{cadaPresupuesto.id_presupuestos}}</td>
                         <td>{{cadaPresupuesto.cantidad_terreno}}</td>
                         <td>{{cadaPresupuesto.fecha_presupuesto}}</td>
                         <td>{{cadaPresupuesto.username}}</td>
@@ -56,8 +54,9 @@ export default {
 </script>
 <style scoped>
 .container{
-
+    background-color: rgb(211, 208, 55);
     color: black;
+    height: 1000px;
 
 }
 .estiloTable1{
@@ -65,7 +64,6 @@ export default {
     background-color: black;
     color: white;
 }
-/**background-color: antiquewhite; */
 .estiloTable2{
     border: solid black 1px;
 }

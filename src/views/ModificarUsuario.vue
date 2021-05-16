@@ -5,21 +5,16 @@
             <table class="container-fluid">
                 <tr class="estiloTable1">
                     <th>Username</th>
-                    <th>Password</th>
-                    <th>Disabled</th>  
-                    <th>Foto</th>
+                    <th>Password</th>  
                     <th>Modificar</th>         
                 </tr>
 
                 <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                    <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.username}}</p></td>
+                    <td v-if="cadaUsuario.disabled === 1"><b>{{cadaUsuario.username}}</b></td>
                     <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
-                    <td v-if="cadaUsuario.disabled === 1"><p >{{cadaUsuario.disabled}}</p></td>
                     <td v-if="cadaUsuario.disabled === 1">
+                        <button type="button" class="btn btn-primary boton" @click="modificarU(nombre = cadaUsuario.username)">Modificar</button>
                         <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
-                    </td>
-                    <td v-if="cadaUsuario.disabled === 1">
-                        <button type="button" class="btn btn-success" @click="modificarU(nombre = cadaUsuario.username)">Modificar</button>
                     </td>
                 </tr>
             </table>
@@ -117,5 +112,8 @@ export default {
     margin-bottom: 15px;
     background-color:rgb(245, 194, 127);
    
+}
+.boton{
+    margin-right: 15px;
 }
 </style>
