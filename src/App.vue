@@ -23,17 +23,17 @@
           <router-link v-if="$route.params.usuario === '@Administrador'" to="/administrador" class="enlace">Administrador</router-link> 
           <hr>
           <h5 v-if="$route.params.usuario === '@Administrador'" class="apartado">Usuarios:</h5><br>
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/usuarios" class="enlace">Listar </router-link> <br> 
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/modificarUsuario" class="enlace">Modificar </router-link> <br> 
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/eliminacionUsuario" class="enlace">Eliminar </router-link> <br> 
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/usuarios/@Administrador" class="enlace">Listar </router-link> <br> 
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/modificarUsuario/@Administrador" class="enlace">Modificar </router-link> <br> 
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/eliminacionUsuario/@Administrador" class="enlace">Eliminar </router-link> <br> 
           <hr>
           <h5 class="apartado" v-if="$route.params.usuario === '@Administrador'">Servicios:</h5><br>
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/serviciosList" class="enlace" >Listar </router-link> <br> 
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/modificarServicio" class="enlace">Modificar </router-link> <br> 
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/serviciosList/@Administrador" class="enlace" >Listar </router-link> <br> 
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/modificarServicio/@Administrador" class="enlace">Modificar </router-link> <br> 
           <hr>
           <h5 class="apartado" v-if="$route.params.usuario === '@Administrador'">Presupuestos:</h5><br>
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/listPresupuestos" class="enlace">Listar </router-link> <br> 
-          <router-link v-if="$route.params.usuario === '@Administrador'" to="/eliminarPresupuesto" class="enlace">Eliminar </router-link>
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/listPresupuestos/@Administrador" class="enlace">Listar </router-link> <br> 
+          <router-link v-if="$route.params.usuario === '@Administrador'" to="/eliminarPresupuesto/@Administrador" class="enlace">Eliminar </router-link>
       </div>
       <div class=" col-lg-10 col-md-10 col-sm-10 col-xs-10 centro">
         <router-view></router-view>

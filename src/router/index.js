@@ -52,7 +52,7 @@ const routes = [
   },
   // Usuarios
   {
-    path: '/usuarios',
+    path: '/usuarios/:usuario',
     component: Usuarios
   },
   {
@@ -61,30 +61,30 @@ const routes = [
   },
   
   {
-    path: '/modificarUsuario',
+    path: '/modificarUsuario/:usuario',
     component: ModificarUsuario
   },
   {
-    path: '/eliminacionUsuario',
+    path: '/eliminacionUsuario/:usuario',
     component: EliminacionUsuario
   },
   // Servicios
   {
-    path: '/serviciosList',
+    path: '/serviciosList/:usuario',
     component: ServiciosList
   },
   {
-    path: '/modificarServicio',
+    path: '/modificarServicio/:usuario',
     component: ModificarServicio
   },
   
   // Presupuestos
   {
-    path: '/listPresupuestos',
+    path: '/listPresupuestos/:usuario',
     component: PresupuestosList
   } ,
   {
-    path: '/eliminarPresupuesto',
+    path: '/eliminarPresupuesto/:usuario',
     component: EliminarPresupuesto
   }
 ]

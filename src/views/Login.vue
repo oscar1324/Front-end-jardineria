@@ -30,9 +30,11 @@
             required
           >
           </div>
-
+          <div class="alert alert-danger" role="alert" v-if="mostrar === true">
+            <h4 class="alert-heading" >Usuario existente, pruebe con otro diferente</h4>
+          </div>
           <input type="submit" class="fadeIn fourth" value="Log In">
-          <button type="button" class="btn btn-danger" @click="comprobacion()">comprobar</button>
+         <!--  <button type="button" class="btn btn-danger" @click="comprobacion()">comprobar</button> -->
         </form>
 
       </div>
@@ -70,27 +72,35 @@ export default {
     },
     methods:{
         login(){
-            console.log("user: " + this.user.username + " / " + this.user.password);
-            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
-            .then( response =>{
-                console.log(response);
-            })
-            .catch(response => console.log("Error petición insertar: " + response.status));
-            this.$router.replace(`/${this.user.username}`)
+            this.array.forEach(element =>{
+              
+            console.log("Username:  " + element.username)
+            if(this.user.username === element.username){
+              
+              console.warn("MISMO NOMBRE");
+              alert("Usuario existente")
+              this.mostrar =  true;
+              setTimeout(()=>{
+              this.mostrar =  false;
+              }, 3500);
+              
+            } else if(this.user.username != element.username){
+              console.log("user: " + this.user.username + " / " + this.user.password);
+              axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
+              .then( response =>{
+                  console.log(response);
+              })
+              .catch(response => console.log("Error petición insertar: " + response.status));
+              this.$router.replace(`/${this.user.username}`)
+            }
+            } ) 
             
         },
 
         comprobacion(){
           console.log("insertado: " + this.user.username  + " / " + this.password);
           
-            this.array.forEach(element =>{
-              
-              console.log("Username:  " + element.username)
-              if(this.user.username === element.username){
-              console.warn("MISMO NOMBRE");
-              console.error("MISMO NOMBRE");
-            }
-            } ) 
+
         }
     },
 }
