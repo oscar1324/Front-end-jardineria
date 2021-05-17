@@ -82,9 +82,7 @@ export default {
 .container{
     color: white;
     background-image: url(https://i.pinimg.com/originals/32/59/b4/3259b419f4e8f069b2fd6aefb9f15ae0.jpg);
-
-    /*https://i0.wp.com/data2.1freewallpapers.com/download/singapore-botanic-gardens-walking-paths.jpg, esta foto de gana de moomento*/
-    /* https://i.pinimg.com/originals/32/59/b4/3259b419f4e8f069b2fd6aefb9f15ae0.jpg   - foto flor*/
+    border-radius: 20px;
     height: 800px;
 }
 .labelito{

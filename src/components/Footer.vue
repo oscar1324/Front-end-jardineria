@@ -3,9 +3,9 @@
         <div class="row footer text-center">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <footer>
-                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal">Aviso legal </a>|
-                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal">Política de privacidad </a>|
-                    <a href="http://www.interior.gob.es/politica-de-cookies">Política de cookies </a>|
+                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" class="enlace">Aviso legal </a>|
+                    <a href="https://www.aepd.es/es/politica-de-privacidad-y-aviso-legal" class="enlace">Política de privacidad </a>|
+                    <a href="http://www.interior.gob.es/politica-de-cookies" class="enlace">Política de cookies </a>|
 
                 </footer>
             </div>
@@ -16,10 +16,14 @@
 <style scoped>
 /*FOOTER*/
 .footer{
-
+border-radius: 20px;
     color: white;
     background-color: rgb(45, 46, 46);
-
+    margin-bottom: 15px;
+     
+}
+.enlace{
+    text-decoration:none;
 }
 .iconos .icon {
     width: 60px;
@@ -29,15 +33,6 @@
     text-align: center;
     line-height: 1.42857;
     color: honeydew;
-}
-.icon.twitter{
-    background-color: rgb(1, 247, 255);
-}
-.icon.facebook{
-    background-color: rgb(26, 26, 209);
-}
-.icon.instagram{
-    background-color: rgb(159, 19, 214);
 }
 .iconos{
     font-size: 40px;

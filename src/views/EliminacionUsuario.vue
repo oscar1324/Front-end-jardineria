@@ -81,8 +81,8 @@ export default {
 .container{
     background-color: rgb(211, 208, 55);
     color: black;
-    height: 1000px;
-
+    height: 100%;
+    border-radius: 20px;
 }
 .estiloTable1{
     border: solid white 1px;
