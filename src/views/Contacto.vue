@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row ">
             <div class="col-lg-5  mapa">
-                <h2>Contacte con nosotros:</h2>
+                <h2 class="hhh">Contacte con nosotros:</h2>
                 <p>
                     Si tienes alguna duda sobre nuestros servicios o necesitas ayuda con tu jardín 
                     rellena el cajón de texto y te responderemos con la mayor brevedad. <br>
@@ -12,11 +12,7 @@
                 <p><b>Email:</b><br>jardinesRobledo@gmail.com</p>
                 <p><b>Horario:</b><br>Lunes-Viernes<br>9:00-14:00/ 16:00-19:30</p>
 
-                <form>
-                    <p>¿Qué desea comunicarnos?</p>
-                    <textarea class="form-control" cols="60" rows="5" placeholder="Escriba..."></textarea>
-                    <input type="submit" placeholder="Enviar" class="btn btn-primary btn-sm">
-                </form>
+
             </div>
 
             <div class="col-lg-6 mapa">
@@ -45,10 +41,6 @@ export default {
 .container{
     color: antiquewhite;
     background-image: url(https://i.pinimg.com/originals/32/59/b4/3259b419f4e8f069b2fd6aefb9f15ae0.jpg);
-
-    /*https://i0.wp.com/data2.1freewallpapers.com/download/singapore-botanic-gardens-walking-paths.jpg, esta foto de gana de moomento*/
-    /* https://i.pinimg.com/originals/32/59/b4/3259b419f4e8f069b2fd6aefb9f15ae0.jpg   - foto flor*/
-    
 }
 /*CABECERA*/
 .cabeza{
@@ -64,6 +56,9 @@ export default {
     background-color: rgb(0, 189, 85);
 }
 /*CUERPO*/
+.hhh{
+    margin-bottom: 40px;
+}
 .contacto{
     background-color: red;
 }

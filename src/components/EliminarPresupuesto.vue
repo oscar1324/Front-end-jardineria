@@ -75,10 +75,11 @@ export default {
             console.log("objeto presupuesto: " , presupuesto);
             axios.put('http://localhost:8080/jardinrobledo/v1/presupuestos/' , presupuesto  )
             .catch(response => console.log("Error petición: " + response.status));
-                this.borradoPresupuesto = true;
+            this.borradoPresupuesto = true;
             setTimeout(()=>{
                 this.borradoPresupuesto = false;
             }, 3500);
+        
 
         },
     }

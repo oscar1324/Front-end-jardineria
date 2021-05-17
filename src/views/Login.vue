@@ -50,6 +50,7 @@ export default {
   name: 'Login',
   data(){
     return{
+      UsuarioRegistrado:false,
       array:[],
       username: '',
       editedPassword: null,
@@ -71,48 +72,64 @@ export default {
       .catch(response => alert("Error petición obtener: " + response.status));
     },
     methods:{
-      login(){
+    login(){
 
-        console.log("user: " + this.user.username + " / " + this.user.password);
-        axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
-        .then( response =>{
-          console.log(response);
-        })
-        .catch(response => console.log("Error petición insertar: " + response.status));
-        this.$router.replace(`/${this.user.username}`)
-        },
+            console.log("user: " + this.user.username + " / " + this.user.password);
+            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
+            .then( response =>{
+              console.log(response);
+              this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
+            })
+            .catch(response => console.log("Error petición insertar: " + response.status));
 
-        comprobacion(){
-          console.log("insertado: " + this.user.username  + " / " + this.password);
-        }
-    },
-
+  
+      }
+    }
     /*
     login(){
-            this.array.forEach(element =>{
-              
-            console.log("Username:  " + element.username)
-            if(this.user.username === element.username){
-              
-              console.warn("MISMO NOMBRE");
-              alert("Usuario existente")
-              this.mostrar =  true;
-              setTimeout(()=>{
-              this.mostrar =  false;
-              }, 3500);
-              
-            } else if(this.user.username != element.username){
-              console.log("user: " + this.user.username + " / " + this.user.password);
-              axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
-              .then( response =>{
-                  console.log(response);
-              })
-              .catch(response => console.log("Error petición insertar: " + response.status));
-              this.$router.replace(`/${this.user.username}`)
+           login(){
+        this.array.forEach(element =>{
+
+          if(this.user.username != element.username){
+            console.log("user: " + this.user.username + " / " + this.user.password);
+            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
+            .then( response =>{
+              console.log(response);
+              this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
+            })
+            .catch(response => console.log("Error petición insertar: " + response.status));
+
+          }else{
+            this.mostrar =  true;
+            setTimeout(()=>{
+            this.mostrar =  false;
+            }, 4300);
             }
-            } ) 
+        })
+      }
+      -------------------------------------------------------------------------
+
+              this.array.forEach(element =>{
+
+          if(this.user.username === element.username){
+            this.mostrar =  true;
+            setTimeout(()=>{
+            this.mostrar =  false;
+            }, 4300);
             
-        },
+            
+          }else if (this.user.username != element.username){
+            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
+            .then( response =>{
+              console.log(response);
+              this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
+            })
+            .catch(response => console.log("Error petición insertar: " + response.status));
+          } else{
+            alert("Error");
+          }
+
+        })
     
     */
 
