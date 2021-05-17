@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 ">              
                 <h3 class="text-center"><b>Total usuarios registrados</b></h3>
-                <table class="container-fluid">
+                <table class="container-fluid" >
                     <tr class="estiloTable1">
                         <th>Username</th>
                         <th>Contraseña</th>
