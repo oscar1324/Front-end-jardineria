@@ -71,7 +71,24 @@ export default {
       .catch(response => alert("Error petición obtener: " + response.status));
     },
     methods:{
-        login(){
+      login(){
+
+        console.log("user: " + this.user.username + " / " + this.user.password);
+        axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
+        .then( response =>{
+          console.log(response);
+        })
+        .catch(response => console.log("Error petición insertar: " + response.status));
+        this.$router.replace(`/${this.user.username}`)
+        },
+
+        comprobacion(){
+          console.log("insertado: " + this.user.username  + " / " + this.password);
+        }
+    },
+
+    /*
+    login(){
             this.array.forEach(element =>{
               
             console.log("Username:  " + element.username)
@@ -96,13 +113,11 @@ export default {
             } ) 
             
         },
+    
+    */
 
-        comprobacion(){
-          console.log("insertado: " + this.user.username  + " / " + this.password);
-          
 
-        }
-    },
+    
 }
 </script>
 
