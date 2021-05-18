@@ -14,7 +14,7 @@
       </div>
       <div class="col-lg-2 col-md-2 col-md-2 col-xs-2 menu text-center">
           <a href="/Principal" class="navbar-brand ">
-            <img src="./imagenes/flor.jpg" width="170" height="70" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imagen">
+            <img src="./imagenes/menu2F.jpg" width="170" height="70" class="col-lg-12 col-md-12 col-sm-6 col-xs-12 imagen">
           </a><br>
           <div class=" nav text-center">
             <router-link to="/Principal" class="paraUsu">Inicio</router-link> <br>     
@@ -42,13 +42,13 @@
           </div>
           
           <hr v-if="$route.params.usuario === '@Administrador'">
-          <div class="apartado" v-if="$route.params.usuario === '@Administrador'">
+          <div class="apartadoc" v-if="$route.params.usuario === '@Administrador'">
             <h5 class="enunciado" v-if="$route.params.usuario === '@Administrador'">Presupuestos</h5>
             <router-link v-if="$route.params.usuario === '@Administrador'" to="/listPresupuestos/@Administrador" class="enlace">Listar </router-link> <br> 
             <router-link v-if="$route.params.usuario === '@Administrador'" to="/eliminarPresupuesto/@Administrador" class="enlace">Eliminar </router-link>
           </div>
       </div>
-      <div class="centro col-lg-10 col-md-10 col-sm-10 col-xs-10 ">
+      <div class="centro col-lg-10 col-md-10 col-sm-12col-xs-12 ">
         <router-view></router-view>
       </div>
       <Footer/>
@@ -113,6 +113,15 @@ export default {
   border-top-left-radius: 20px;
   border-bottom-right-radius: 20px;
   
+}
+.apartadoc{
+    font-size: 170%;
+  color: antiquewhite;
+    padding: 3px 10px;
+  border: PowderBlue 5px solid;
+  margin-bottom: 15px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .imagen{
   margin-right: 5px;

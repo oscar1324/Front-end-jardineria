@@ -6,9 +6,9 @@
                 <div class=" form-group">
                     <h4>¿Qué servicio necesita?</h4>
                     <select v-model="selected" class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-                        <option disabled value="">Seleccione un serdicio</option>
-                        <option  v-for="(cadaServicio, index) in arrayServicios" :key="index" >
-                            {{ cadaServicio.idServicios}} <!-- - {{cadaServicio.descripcionServicio}}  -->
+                        <option disabled value="">Seleccione servicio...</option>
+                        <option  v-for="(cadaServicio, index) in arrayServicios" :key="index" v-bind:value="cadaServicio.idServicios">
+                            {{ cadaServicio.idServicios}}  - {{cadaServicio.descripcionServicio}}  
                         </option>
                     </select><br><br>
                     <h4>¿Cual es tu terreno?</h4>
@@ -37,13 +37,19 @@
                 <textarea cols="30" rows="5" placeholder="Escriba..." class="form-control" v-model="comentario"></textarea>
             </div>
 
-            <button type="button" class="btn btn-danger" @click="envioPresupuesto($route.params.id,$route.params.usuario )">Calcular presupuesto</button>
+            <button type="button" class="btn btn-danger" @click="envioPresupuesto($route.params.usuario )">Calcular presupuesto</button>
 
      
             <div class="col-lg-12 col-md-3 col-sm-3 text-center">
                  <br>
                 <h4>Presupuesto de:</h4>
                 <p>El presupuesto es de ... 80 euros</p>
+                <p>LISTAR PRECIO</p>
+                <ul v-for="(cadaPrecio, index) in array" :key="index">
+                    <li v-if="cadaPrecio.username === $route.params.usuario">
+                        {{cadaPrecio.precio}}
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -61,25 +67,28 @@ export default {
             enviarFormulario:[],
             tipo: '',
             arrayPresupuestos:[],
+            array:[],
             arrayServicios:[],
             selected:''
         }
     },
 
     methods:{
-        envioPresupuesto(id, usuario){
-            console.log(id);
+        envioPresupuesto( usuario){
+
             let objeto =  {
-                username: usuario,
-                cantidadTerreno: this.tipo,
+                user: usuario,
+                terreno: this.tipo,
                 comentario: this.comentario,
                 servicio:this.selected, // haciendo referencia a idServicio apodado servicio
-                disabled: 1
             }
             console.log("Objeto: " , objeto); 
-            // Nueva UTL:  http://localhost:8080/jardinrobledo/v1/solicitudpresupuesto
-           // axios.post('http://localhost:8080/jardinrobledo/v1/presupuestos/' , objeto)
-            //.catch(response => console.log("Error petición insertar: " + response.status));
+          
+           axios.post('http://localhost:8080/jardinrobledo/v1/solicitudpresupuesto' , objeto)
+           .then(response => console.log(response))
+
+
+        
 
 
         }
@@ -92,7 +101,21 @@ export default {
             this.arrayServicios.sort(((b,a) => b.idServicios - a.idServicios));
         })
         .catch(response => alert("Error petición obtener: " + response.status));
+
+
+    },
+
+    update(){
+        axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
+        .then(response =>{
+            console.log("MIRARRRR");
+            console.log(response);
+            this.array = response.data;
+            console.log(response);
+           })
     }
+
+
 
 }
 </script>

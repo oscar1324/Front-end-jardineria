@@ -8,7 +8,7 @@
                     </div>
                 
                     <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-12 col-sm-12 ">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: black;">Sistema riego</h4>
@@ -19,7 +19,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-12 col-sm-12 ">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: black;">Podas</h4>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4">
+                        <div class="col-lg-4 col-md-12 col-sm-12 ">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: black;">Cesped artificial</h4>
@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4 caja">
+                        <div class="col-lg-4 col-md-12 col-sm-12  caja">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h4 class="card-title" style="color: black;">Mantenimiento </h4>
@@ -52,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4  col-sm-4caja">
+                        <div class="col-lg-4 col-md-12 col-sm-12 caja">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h3 class="card-title" style="color: black;">Desbrozar</h3>
@@ -63,11 +63,11 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4 caja">
+                        <div class="col-lg-4 col-md-12 col-sm-12 caja">
                             <div class="card text-center">
                                 <div class="card-body">
                                     <h3 class="card-title" style="color: black;">Plantaciones</h3>
-                                    <img src="../imagenes/plantar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                                    <img src="../imagenes/plantar.jpg"  width="300" height="150" class="col-lg-12 col-md-12 col-sm-5 col-xs-5 ">
                                     <p class="card-text" style="color: black;">Los árboles son vida para su jardín y proporcionan un entorno exclusivo.</p>
                                     <button type="button" class="btn btn-primary" @click="direccionarconID6($route.params.usuario)">Calcular presupuesto</button>
                                 </div>
@@ -150,6 +150,7 @@ export default {
 }
 .card{
     margin-bottom: 30px;
+    border-radius: 20px;
 }
 
 </style>
