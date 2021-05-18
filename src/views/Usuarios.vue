@@ -3,20 +3,23 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 ">              
                 <h3 class="text-center"><b>Total usuarios registrados</b></h3>
-                <table class="container-fluid" >
-                    <tr class="estiloTable1">
-                        <th>Username</th>
-                        <th>Contraseña</th>
-                        <th>Foto</th>           
-                    </tr>
-
-                    <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                        <td v-if="cadaUsuario.disabled === 1"><b>{{cadaUsuario.username}}</b></td>
-                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
-                        <td v-if="cadaUsuario.disabled === 1">
-                            <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
-                        </td>
-                    </tr>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr class="estiloTable1">
+                        <th scope="col">Username</th>
+                        <th scope="col">Contraseña</th>
+                        <th scope="col">Foto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(cadaUsuario, index) in array" :key="index" >
+                            <td v-if="cadaUsuario.disabled === 1"><b>{{cadaUsuario.username}}</b></td>
+                            <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
+                            <td v-if="cadaUsuario.disabled === 1">
+                                <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

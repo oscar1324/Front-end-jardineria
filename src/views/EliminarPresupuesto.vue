@@ -3,30 +3,34 @@
         <div class="row">
             <div class="col-lg-12">
                 <h3 class="text-center"><b>Presupuestos</b></h3>
-                <table class="container-fluid">
-                    <tr class="estiloTable1">
-                        <th>Cantidad terreno</th>
-                        <th>Fecha</th>
-                        <th>Perteneciente a</th>
-                        <th>Comentario</th>
-                        <th>Eliminar</th>
-                            
-                    </tr>
 
-                    <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.cantidadTerreno}}</td>
-                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.fechaPresupuesto}}</td>
-                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.username}}</td>
-                        <td  v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.comentario}}</td>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr class="estiloTable1">
+                        <th scope="col">Cantidad terreno</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Perteneciente a</th>
+                        <th scope="col">Comentario</th>
+                        <th scope="col">Precio</th>
+                         <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index">
+                        <td v-if="cadaPresupuesto.disabled === 1"><b>{{cadaPresupuesto.cantidadTerreno}} m2</b></td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.fechaPresupuesto}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1"><b>{{cadaPresupuesto.username}}</b></td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.comentario}}</td>
+                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.precio}}</td>
                         <td>
                             <button type="button" class="btn btn-danger" @click="eliminarPresupuesto(cadaPresupuesto.idPresupuestos,cadaPresupuesto.cantidadTerreno,cadaPresupuesto.fechaPresupuesto,cadaPresupuesto.comentario,cadaPresupuesto.username)">
                                 eliminar
                             </button>
                         </td>
-                    
                     </tr>
+                    </tbody>
                 </table>
-                <div class="alert alert-danger" role="alert" v-if="borradoPresupuesto === true">
+                <div class="alert alert-danger alerta" role="alert" v-if="borradoPresupuesto === true">
                     <h4 class="alert-heading" >Borrado correctamente</h4>
                 </div>
             </div>
@@ -98,8 +102,10 @@ export default {
     background-color: black;
     color: white;
 }
-/**background-color: antiquewhite; */
 .estiloTable2{
     border: solid black 1px;
+}
+.alerta{
+    margin-top: 15px;
 }
 </style>

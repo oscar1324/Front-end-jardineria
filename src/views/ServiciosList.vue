@@ -4,20 +4,24 @@
             <div class="col-lg-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 formulario">
                 <h3 class="text-center"><b>Servicios disponibles:</b></h3>
-                <table class="container-fluid">
-                    <tr class="estiloTable1">
-                        <th>Descripción del servicio</th>
-                        <th>Precio m/€</th>
-                        <th>Servicios</th>
-                    </tr>
 
-                    <tr v-for="(cadaServicio, index) in arrayServicios" :key="index" class="estiloTable2">
-                        <td>{{cadaServicio.descripcionServicio}}</td>
-                        <td>{{cadaServicio.precioMetro}}</td>
-                        <td>
-                            <img src="../imagenes/herra1.jpg" height="40">
-                        </td>
-                    </tr>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr class="estiloTable1">
+                        <th scope="col">Descripción del servicio</th>
+                        <th scope="col">Precio m/€</th>
+                        <th scope="col">Servicios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(cadaServicio, index) in arrayServicios" :key="index" >
+                            <td><b>{{cadaServicio.descripcionServicio}}</b></td>
+                            <td>{{cadaServicio.precioMetro}}</td>
+                            <td>
+                                <img src="../imagenes/herra1.jpg" height="40">
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             

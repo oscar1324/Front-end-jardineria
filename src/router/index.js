@@ -9,8 +9,8 @@ import EliminacionUsuario from '../views/EliminacionUsuario.vue'
 import ModificarUsuario from '../views/ModificarUsuario.vue'
 import ServiciosList from '../views/ServiciosList.vue'
 import ModificarServicio from '../views/ModificarServicio.vue'
-import PresupuestosList from '../components/PresupuestosList.vue' 
-import EliminarPresupuesto from '../components/EliminarPresupuesto.vue' 
+import PresupuestosList from '../views/PresupuestosList.vue' 
+import EliminarPresupuesto from '../views/EliminarPresupuesto.vue' 
 import Login from '../views/Login.vue'
 
 const routes = [

@@ -10,7 +10,7 @@
                         <input type="submit" class="fadeIn fourth" value="Modificar contraseña ">
                     </div>
                     <div class="alert alert-success" role="alert" v-if="inserccionUsuario === true">
-                        <h4 class="alert-heading" >Insertado correctamente</h4>
+                        <h4 class="alert-heading" >Modificado correctamente</h4>
                     </div> 
                 </form>
     

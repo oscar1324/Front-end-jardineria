@@ -14,9 +14,10 @@
           <a href="/Principal" class="navbar-brand ">
             <img src="./imagenes/flor.jpg" width="170" height="70" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 imagen">
           </a><br>
-          <div class=" nav">
+          <div class=" nav text-center">
             <router-link to="/Principal" class="paraUsu">Inicio</router-link> <br>     
             <p>.</p>
+            <!-- <router-link :to="{ path: 'servicio', params: { usuario: $route.params.usuario }}" class="paraUsu">Servicios</router-link><br> -->
             <router-link to="/servicio/:usuario" class="paraUsu">Servicios</router-link> <br> 
             <router-link to="/Contacto" class="paraUsu">Contacto</router-link>           <br> 
             <router-link to="/login" class="paraUsu">Login</router-link>  
@@ -55,7 +56,7 @@
 </template>
 
 <script>
-import Footer from '../src/components/Footer.vue';
+import Footer from './views/Footer.vue';
 export default {
   data(){
     return{

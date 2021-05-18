@@ -89,13 +89,6 @@ export default {
         return{
             mostrar: false,
             arrayServicios: [],
-            foto: [
-                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
-                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
-                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
-                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
-                {enlace: "https://www.google.com/search?q=sistema+de+riego+foto+4k&rlz=1C1GCEA_enES888ES888&sxsrf=ALeKk01GzFXniUUO19s7t_KAMeoto9L1Bg:1620311031972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigx_H7oLXwAhVk8-AKHdhCCWAQ_AUoAXoECAEQAw&biw=1280&bih=577#imgrc=Ga9KlppxGyfTbM"},
-            ]
         }
     },
     components:{
@@ -107,6 +100,7 @@ export default {
             let servicioID = 1
             console.log("Direccionar hacía presupuesto con ID: " + servicioID + " / usuario: " + usuario);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
+            // this.$router.replace(`/Presupuesto/${servicioID}/${usuario}/${servicioID}`)
         },
         direccionarconID2(usuario){
             let servicioID = 2

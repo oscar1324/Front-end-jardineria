@@ -2,22 +2,25 @@
     <div class="container">
         <div class="row">
             <h3 class="text-center"><b>Usuarios</b></h3>
-            <table class="container-fluid">
-                <tr class="estiloTable1">
-                    <th>Username</th>
-                    <th>Password</th>  
-                    <th>Modificar</th>         
-                </tr>
-
-                <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                    <td v-if="cadaUsuario.disabled === 1"><b>{{cadaUsuario.username}}</b></td>
-                    <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
-                    <td v-if="cadaUsuario.disabled === 1">
-                        <button type="button" class="btn btn-primary boton" @click="modificarU(nombre = cadaUsuario.username)">Modificar</button>
-                        <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
-                    </td>
-                </tr>
-            </table>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr class="estiloTable1">
+                        <th scope="col">Username</th>
+                        <th scope="col">Contraseña</th>
+                        <th scope="col">Modificar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(cadaUsuario, index) in array" :key="index" >
+                            <td v-if="cadaUsuario.disabled === 1"><b>{{cadaUsuario.username}}</b></td>
+                            <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
+                            <td v-if="cadaUsuario.disabled === 1">
+                                <button type="button" class="btn btn-primary boton" @click="modificarU(nombre = cadaUsuario.username)">Modificar</button>
+                                <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
+                            </td> 
+                        </tr>
+                    </tbody>
+                </table>
             <tabla v-if="mostrarFormulario === true" :nombreRecibido="nombre"></tabla>
 
         </div>
@@ -80,7 +83,7 @@ export default {
 .container{
     background-color: rgb(211, 208, 55);
     color: black;
-    height: 1000px;
+    height: 100%;
     border-radius: 20px;
 
 }

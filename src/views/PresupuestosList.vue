@@ -2,31 +2,26 @@
     <div class="container">
 
                 <h3 class="text-center"><b>Presupuestos</b></h3>
-                <table class="container-fluid">
-                    <tr class="estiloTable1">
-                        <th>Cantidad terreno</th>
-                        <th>Fecha</th>
-                        <th>Perteneciente a</th>
-                        <th>Comentario</th>
-                        <th>disabled</th>
-                        <th>Precio/€</th>
-                      
-                        <th></th>
-                            
-                    </tr>
-
-                    <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index" class="estiloTable2">
-                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.cantidadTerreno}}</td>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr class="estiloTable1">
+                        <th scope="col">Cantidad terreno</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Perteneciente a</th>
+                        <th scope="col">Comentario</th>
+                        <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="(cadaPresupuesto, index) in arrayPresupuestos" :key="index">
+                        <td v-if="cadaPresupuesto.disabled === 1"><b>{{cadaPresupuesto.cantidadTerreno}} m2</b></td>
                         <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.fechaPresupuesto}}</td>
                         <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.username}}</td>
                         <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.comentario}}</td>
-                        <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.disabled}}</td>
                         <td v-if="cadaPresupuesto.disabled === 1">{{cadaPresupuesto.precio}}</td>
-                        <td>
-                            <img src="../imagenes/presu.jpg" width="40">
-                        </td>
                     
                     </tr>
+                    </tbody>
                 </table>
 
     </div>

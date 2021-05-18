@@ -81,7 +81,11 @@ export default {
               this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
             })
             .catch(response => console.log("Error petición insertar: " + response.status));
-
+            this.$router.push({
+            params:{
+              usuario: this.user.username,
+            }
+            });
   
       }
     }
