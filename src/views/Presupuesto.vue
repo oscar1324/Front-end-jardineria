@@ -6,11 +6,11 @@
                 <div class=" form-group">
                     <h4>¿Qué servicio necesita?</h4>
                     <select v-model="selected" class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
-                        <option disabled value="Seleccione un elemento">Seleccione un elemento</option>
+                        <option disabled value="">Seleccione un serdicio</option>
                         <option  v-for="(cadaServicio, index) in arrayServicios" :key="index" >
                             {{ cadaServicio.idServicios}} <!-- - {{cadaServicio.descripcionServicio}}  -->
                         </option>
-                    </select><br><span>Seleccionado: {{ selected }}</span><br>
+                    </select><br><br>
                     <h4>¿Cual es tu terreno?</h4>
                     <label for="enviarFormulario">
                         <input type="radio" id="1" value="50" v-model="tipo">

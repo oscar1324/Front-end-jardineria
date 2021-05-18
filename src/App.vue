@@ -3,12 +3,14 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cabeza text-center">
         <h1>JARDINERIA ROBLEDO S.L</h1>
-        <img src="./imagenes/flor.jpg" width="80">
-        <img src="./imagenes/flor.jpg" width="80">
-        <img src="./imagenes/flor.jpg" width="80">
-        <img src="./imagenes/flor.jpg" width="80">
-        <img src="./imagenes/flor.jpg" width="80">
-        <img src="./imagenes/flor.jpg" width="80">
+        <img src="./imagenes/oneF.jpg" class="flores" width="80" height="60">
+        <img src="./imagenes/dosF.jpg" class="flores" width="80" height="60">
+        <img src="./imagenes/tresF.jpg" class="flores" width="80" height="60">
+        <img src="./imagenes/cuatroF.jpg" class="flores" width="80" height="60">
+        <img src="./imagenes/cincoF.jpg"  class="flores" width="80" height="60">
+        <img src="./imagenes/seisF.jpg" class="flores" width="80" height="60">
+        <img src="./imagenes/sieteF.jpg" class="flores" width="80" height="60">
+
       </div>
       <div class="col-lg-2 col-md-2 col-md-2 col-xs-2 menu text-center">
           <a href="/Principal" class="navbar-brand ">
@@ -114,7 +116,8 @@ export default {
 }
 .imagen{
   margin-right: 5px;
-   margin-top: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
 }
 .paraUsu {
   cursor: pointer;
@@ -123,13 +126,16 @@ export default {
   text-decoration:none;
 }
 .nav a{
-    font-size: 7mm;
-
+  font-size: 7mm;
   color: white;
 }
 .nav a.router-link-exact-active {
-    font-size: 7mm;
+  font-size: 7mm;
   color: #42b983;
+}
+.flores{
+  margin: 5px;
+  border-radius: 20px;
 }
 </style>
 
