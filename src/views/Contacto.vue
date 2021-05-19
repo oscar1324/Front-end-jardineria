@@ -37,7 +37,7 @@ export default {
 </script>
 <style scoped>
 .container{
-     border-radius: 20px;
+    border-radius: 20px;
     color: white;
     background-image: url(https://i.pinimg.com/originals/32/59/b4/3259b419f4e8f069b2fd6aefb9f15ae0.jpg);
 }

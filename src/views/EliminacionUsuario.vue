@@ -67,9 +67,7 @@ export default {
                 username,
                 password,
                 disabled: 0
-            
             }
-            console.log("objeto usuario: " , usuario);
             axios.put('http://localhost:8080/jardinrobledo/v1/usuarios/' ,usuario  )
             .catch(response => console.log("Error petición: " + response.status));
             this.borrado = true;

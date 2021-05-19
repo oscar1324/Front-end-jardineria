@@ -82,7 +82,6 @@ export default {
 
     methods:{
         goServicios(usuario){
-            console.log("Nombre del usuario: " + usuario);
             this.$router.replace(`/servicio/${usuario}`);
         }
     }

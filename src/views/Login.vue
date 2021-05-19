@@ -83,60 +83,11 @@ export default {
         }
       });
       }
-    }
-    /*
-    login(){
-           login(){
-        this.array.forEach(element =>{
-
-          if(this.user.username != element.username){
-            console.log("user: " + this.user.username + " / " + this.user.password);
-            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
-            .then( response =>{
-              console.log(response);
-              this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
-            })
-            .catch(response => console.log("Error petición insertar: " + response.status));
-
-          }else{
-            this.mostrar =  true;
-            setTimeout(()=>{
-            this.mostrar =  false;
-            }, 4300);
-            }
-        })
-      }
-      -------------------------------------------------------------------------
-
-              this.array.forEach(element =>{
-
-          if(this.user.username === element.username){
-            this.mostrar =  true;
-            setTimeout(()=>{
-            this.mostrar =  false;
-            }, 4300);
-            
-            
-          }else if (this.user.username != element.username){
-            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
-            .then( response =>{
-              console.log(response);
-              this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
-            })
-            .catch(response => console.log("Error petición insertar: " + response.status));
-          } else{
-            alert("Error");
-          }
-
-        })
-    
-    */
-    
+    } 
 }
 </script>
 
 <style scoped>
-
 html {
   background-color: #56baed;
 }

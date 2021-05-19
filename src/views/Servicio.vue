@@ -98,37 +98,30 @@ export default {
     methods:{
         direccionarconID1(usuario){
             let servicioID = 1
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID + " / usuario: " + usuario);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
-            // this.$router.replace(`/Presupuesto/${servicioID}/${usuario}/${servicioID}`)
         },
         direccionarconID2(usuario){
             let servicioID = 2
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID  + " / usuario: " + usuario);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
         direccionarconID3(usuario){
             let servicioID = 3
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
         direccionarconID4(usuario){
             let servicioID = 4
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
         direccionarconID5(usuario){
             let servicioID = 5
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         },
 
         direccionarconID6(usuario){
             let servicioID = 6
-            console.log("Direccionar hacía presupuesto con ID: " + servicioID);
             this.$router.replace(`/Presupuesto/${servicioID}/${usuario}`)
         }
     },
