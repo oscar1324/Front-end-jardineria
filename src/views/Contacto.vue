@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row ">
-            <div class="col-lg-5  mapa">
+            <div class="col-lg-6  mapa">
                 <h2 class="hhh">Contacte con nosotros:</h2>
                 <p>
                     Si tienes alguna duda sobre nuestros servicios o necesitas ayuda con tu jardín 
@@ -19,8 +19,6 @@
                     teniendo presente el medio ambiente. Entre los servicios que ofrecemos está el mantenimiento del jardín,
                     ejecución de jardines nuevos, trabajos de poda e instalaciones de césped o riegos. 
                 </p>
-
-
             </div>
 
             <div class="col-lg-6 mapa">
@@ -30,7 +28,6 @@
             </div>
         </div>
     </div>
-    
 </template>
 
 <script>
@@ -66,38 +63,32 @@ export default {
     margin-bottom: 15px;
 }
 
-
-/*Estilos de servicios que esta enlazado con concacto*/
-
- #Servicios{
-
-     padding: 10px;
-
- }
- #Servicios h1 {
-     font-weight: 900;
-     font-size: 34px;
-     padding-bottom: 5px;
- }
- .title{
-     text-align: center;
-     padding: 25px;
- }
- .title p{
-     font-size: 18px;
- }
- .card-body{
-     box-shadow: 0 0 20 7px black;
- }
- .card-body a {
-     color:  rgb(37, 145, 233);
-     text-decoration: none;
-     font-size: 15px;
-     margin-top: auto;
-     font-weight: 600;
- }
- .caja{
-     margin-top: 20px;
- }
-
+#Servicios{
+    padding: 10px;
+}
+#Servicios h1 {
+    font-weight: 900;
+    font-size: 34px;
+    padding-bottom: 5px;
+}
+.title{
+    text-align: center;
+    padding: 25px;
+}
+.title p{
+    font-size: 18px;
+}
+.card-body{
+    box-shadow: 0 0 20 7px black;
+}
+.card-body a {
+    color:  rgb(37, 145, 233);
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: auto;
+    font-weight: 600;
+}
+.caja{
+    margin-top: 20px;
+}
 </style>

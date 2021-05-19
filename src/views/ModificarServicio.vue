@@ -10,7 +10,6 @@
                         <th scope="col">Descripción del servicio</th>
                         <th scope="col">Precio m/€</th>
                         <th scope="col">Modificaciones de precio</th>
-                        
                         </tr>
                     </thead>
                     <tbody>
@@ -26,7 +25,6 @@
                 </table>
                 <tabla v-if="mostrarFormulario === true" :idRecibido="id" :nombreRecibido="nombre"></tabla>
             </div>
-
         </div>
     </div>
 </template>
@@ -40,7 +38,6 @@ export default {
             id: '',
             arrayServicios:[],
             mostrarFormulario: false
-
         }
     },
     components:{
@@ -48,7 +45,6 @@ export default {
     },
     methods:{
         pasarDato(id, nombre){
-            console.log("Paso id: " + id + " / " + nombre);
             this.mostrarFormulario = true
         }
     },
@@ -113,4 +109,11 @@ export default {
 .imagen{
     margin-right: 15px;
 }
+
+.estiloTable1{
+    border: solid white 1px;
+    background-color: black;
+    color: white;
+}
+
 </style>

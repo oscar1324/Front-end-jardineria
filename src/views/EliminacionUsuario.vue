@@ -92,7 +92,6 @@ export default {
     background-color: black;
     color: white;
 }
-/**background-color: antiquewhite; */
 .estiloTable2{
     border: solid black 1px;
 }

@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="col-lg-12 col-md-12 col-sm-12 formulario">
-                <h3 class="text-center"><b>Servicios disponibles:</b></h3>
+                <h3 class="text-center"><b>Servicios disponibles</b></h3>
 
                 <table class="table">
                     <thead class="thead-light">

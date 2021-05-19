@@ -22,7 +22,6 @@
                     </tbody>
                 </table>
             <tabla v-if="mostrarFormulario === true" :nombreRecibido="nombre"></tabla>
-
         </div>
     </div>
 </template>
@@ -38,18 +37,15 @@ export default {
             username: '',
             password: '',
             array: [],
-
             user: {
                 username: '',
                 password: '',
                 disabled: 1
             },
-            
         }
     },
     components:  {
         tabla
-       
     },
     methods:{
         modificarU(nombre){
@@ -57,7 +53,6 @@ export default {
             this.mostrarFormulario = true
         }
     },
-
     created(){
         axios.get("http://localhost:8080/jardinrobledo/v1/usuarios")
         .then( response => {
@@ -75,7 +70,6 @@ export default {
         })
         .catch(response => alert("Error petición obtener: " + response.status));
     },
-
 }
 </script>
 
@@ -85,14 +79,12 @@ export default {
     color: black;
     height: 100%;
     border-radius: 20px;
-
 }
 .estiloTable1{
     border: solid white 1px;
     background-color: black;
     color: white;
 }
-/**background-color: antiquewhite; */
 .estiloTable2{
     border: solid black 1px;
 }
@@ -102,7 +94,6 @@ export default {
     border-radius:22px;
     padding: 10px;
 }
-
 .margenP{
     background-color:rgb(245, 194, 127);
     margin-bottom: 15px;
@@ -115,7 +106,6 @@ export default {
     padding-top: 100px;
     margin-bottom: 15px;
     background-color:rgb(245, 194, 127);
-   
 }
 .boton{
     margin-right: 15px;
