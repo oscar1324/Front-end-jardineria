@@ -43,7 +43,6 @@
 </div>
 </template>
 
-
 <script>
 import axios from 'axios';
 export default {
@@ -73,20 +72,16 @@ export default {
     },
     methods:{
     login(){
-
-            console.log("user: " + this.user.username + " / " + this.user.password);
-            axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
-            .then( response =>{
-              console.log(response);
-              this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
-            })
-            .catch(response => console.log("Error petición insertar: " + response.status));
-            this.$router.push({
-            params:{
-              usuario: this.user.username,
-            }
-            });
-  
+      axios.post('http://localhost:8080/jardinrobledo/v1/usuarios/', this.user)
+      .then( response =>{
+        this.$router.replace(`/${this.user.username}`) // Preguntar miercoles
+      })
+      .catch(response => console.log("Error petición insertar: " + response.status));
+      this.$router.push({
+      params:{
+        usuario: this.user.username,
+        }
+      });
       }
     }
     /*
@@ -136,8 +131,6 @@ export default {
         })
     
     */
-
-
     
 }
 </script>

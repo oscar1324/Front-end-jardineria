@@ -19,9 +19,8 @@
           <div class=" nav text-center">
             <router-link to="/Principal" class="paraUsu">Inicio</router-link> <br>     
             <p>.</p>
-            <!-- <router-link :to="{ path: 'servicio', params: { usuario: $route.params.usuario }}" class="paraUsu">Servicios</router-link><br> -->
-            <router-link to="/servicio/:usuario" class="paraUsu">Servicios</router-link> <br> 
-            <router-link to="/Contacto" class="paraUsu">Contacto</router-link>           <br> 
+            <router-link :to="{ name:'servicio', params: { usuario: $route.params.usuario }}" class="paraUsu">Servicios</router-link><br> 
+            <router-link :to="{name:'Contacto', params: {usuario: $route.params.usuario}}" class="paraUsu">Contacto</router-link>           <br> 
             <router-link to="/login" class="paraUsu">Login</router-link>  
           </div>  
           <hr v-if="$route.params.usuario === '@Administrador'">
@@ -45,7 +44,6 @@
           <div class="apartadoc" v-if="$route.params.usuario === '@Administrador'">
             <h5 class="enunciado" v-if="$route.params.usuario === '@Administrador'">Presupuestos</h5>
             <router-link v-if="$route.params.usuario === '@Administrador'" to="/listPresupuestos/@Administrador" class="enlace">Listar </router-link> <br> 
-            <router-link v-if="$route.params.usuario === '@Administrador'" to="/eliminarPresupuesto/@Administrador" class="enlace">Eliminar </router-link>
           </div>
       </div>
       <div class="centro col-lg-10 col-md-10 col-sm-12col-xs-12 ">
@@ -62,7 +60,7 @@ import Footer from './views/Footer.vue';
 export default {
   data(){
     return{
-    
+      
     }
   },
   components: {Footer},

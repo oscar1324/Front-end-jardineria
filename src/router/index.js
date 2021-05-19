@@ -10,7 +10,6 @@ import ModificarUsuario from '../views/ModificarUsuario.vue'
 import ServiciosList from '../views/ServiciosList.vue'
 import ModificarServicio from '../views/ModificarServicio.vue'
 import PresupuestosList from '../views/PresupuestosList.vue' 
-import EliminarPresupuesto from '../views/EliminarPresupuesto.vue' 
 import Login from '../views/Login.vue'
 
 const routes = [
@@ -26,6 +25,7 @@ const routes = [
   },
   {
     path: '/servicio/:usuario',
+    name: 'servicio',
     component: Servicio
   },
   {
@@ -38,6 +38,11 @@ const routes = [
   },
   {
     path:'/Contacto',
+    component:Contacto
+  },
+  {
+    path:'/Contacto/:usuario',
+    name: 'Contacto',
     component:Contacto
   },
   {
@@ -72,11 +77,7 @@ const routes = [
   {
     path: '/listPresupuestos/:usuario',
     component: PresupuestosList
-  } ,
-  {
-    path: '/eliminarPresupuesto/:usuario',
-    component: EliminarPresupuesto
-  }
+  } 
 ]
 
 const router = createRouter({
