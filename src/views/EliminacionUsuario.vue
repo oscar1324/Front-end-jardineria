@@ -3,24 +3,27 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <h3 class="text-center"><b>Eliminar Usuarios</b></h3>
-                <table class="container-fluid">
-                    <tr class="estiloTable1">
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Eliminación de usuario</th>         
-                    </tr>
-
-                    <tr v-for="(cadaUsuario, index) in array" :key="index" class="estiloTable2">
-                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.username}}</p></td>
-                        <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
-                        <td  v-if="cadaUsuario.disabled === 1">
-                            <button type="button" class="btn btn-danger boton" @click="eliminarUsuario(cadaUsuario.username, cadaUsuario.password, cadaUsuario.disabled)" v-if="cadaUsuario.disabled === 1">
-                                eliminar
-                            </button>
-                            <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
-                            
-                        </td>
-                    </tr>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr class="estiloTable1">
+                        <th scope="col">Username</th>
+                        <th scope="col">Contraseña</th>
+                        <th scope="col">Eliminación usuario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(cadaUsuario, index) in array" :key="index">
+                            <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.username}}</p></td>
+                            <td v-if="cadaUsuario.disabled === 1"><p>{{cadaUsuario.password}}</p></td>
+                            <td  v-if="cadaUsuario.disabled === 1">
+                                <button type="button" class="btn btn-danger boton" @click="eliminarUsuario(cadaUsuario.username, cadaUsuario.password, cadaUsuario.disabled)" v-if="cadaUsuario.disabled === 1">
+                                    eliminar
+                                </button>
+                                <img src="../imagenes/usuario2.jpg" height="40" width="" alt="">
+                                
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
                 <div class="alert alert-danger aviso" role="alert" v-if="borrado === true">
                     <h4 class="alert-heading" >Borrado correctamente</h4>

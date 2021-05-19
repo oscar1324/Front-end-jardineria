@@ -40,16 +40,11 @@
             <button type="button" class="btn btn-danger" @click="envioPresupuesto($route.params.usuario )">Calcular presupuesto</button>
 
      
-            <div class="col-lg-12 col-md-3 col-sm-3 text-center">
-                 <br>
-                <h4>Presupuesto de:</h4>
-                <p>El presupuesto es de ... 80 euros</p>
-                <p>LISTAR PRECIO</p>
-                <ul v-for="(cadaPrecio, index) in array" :key="index">
-                    <li v-if="cadaPrecio.username === $route.params.usuario">
-                        {{cadaPrecio.precio}}
-                    </li>
-                </ul>
+            <div class="col-lg-12 col-md-3 col-sm-3 text-center formulario">
+                
+                <h1>Presupuesto Total</h1>
+                <h3><b>{{valor.data}} euros</b></h3>
+            
             </div>
         </div>
 
@@ -69,7 +64,8 @@ export default {
             arrayPresupuestos:[],
             array:[],
             arrayServicios:[],
-            selected:''
+            selected:'',
+            valor:[]
         }
     },
 
@@ -85,12 +81,7 @@ export default {
             console.log("Objeto: " , objeto); 
           
            axios.post('http://localhost:8080/jardinrobledo/v1/solicitudpresupuesto' , objeto)
-           .then(response => console.log(response))
-
-
-        
-
-
+           .then(response => this.valor = response)
         }
     },
 
@@ -105,17 +96,6 @@ export default {
 
     },
 
-    update(){
-        axios.get('http://localhost:8080/jardinrobledo/v1/presupuestos')
-        .then(response =>{
-            console.log("MIRARRRR");
-            console.log(response);
-            this.array = response.data;
-            console.log(response);
-           })
-    }
-
-
 
 }
 </script>
@@ -129,4 +109,13 @@ export default {
 .labelito{
     margin-bottom: 30px;
 }
+.formulario{
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border:3px solid black;
+    border-radius:22px;
+    padding: 10px;
+    color: black;
+}
+
 </style>

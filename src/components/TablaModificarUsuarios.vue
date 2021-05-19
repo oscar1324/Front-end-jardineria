@@ -50,5 +50,10 @@ export default {
 }
 </script>
 <style scoped>
-
+.formulario{
+    margin-bottom: 15px;
+    border:3px solid black;
+    border-radius:22px;
+    padding: 10px;
+}
 </style>
